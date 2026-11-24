@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำแนะนำขนาดยาต้านจุลชีพตามการทำงานของไต - รพ.วิเชียรบุรี</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS สำหรับการออกแบบ UI -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- โหลด Google Font: Sarabun -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            font-family: 'Sarabun', sans-serif; 
+        }
+
+        /* Styling เพิ่มเติมสำหรับ Radio Option Rating ของแบบประเมิน */
+        .rating-options {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f1f5f9;
+            padding: 4px;
+            border-radius: 8px;
+        }
+
+        .rating-option {
+            flex: 1;
+            text-align: center;
+        }
+
+        .rating-option input[type="radio"] {
+            display: none;
+        }
+
+        .rating-option label {
+            display: block;
+            padding: 6px 0;
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748b;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .rating-option input[type="radio"]:checked + label {
+            background-color: white;
+            color: #0f766e;
+            font-weight: 700;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        /* Spectrum Search Result Badges Styling */
+        .badge.excellent { background-color: #d8f3e4; color: #276749; }
+        .badge.good { background-color: #d7ebf8; color: #2b6cb0; }
+        .badge.moderate { background-color: #f6edd4; color: #8a5a12; }
+        .badge.limited { background-color: #f6dede; color: #9b2c2c; }
+        /* Readable typography and accessible touch targets */
+        html { font-size: 17px; }
+        body { line-height: 1.6; }
+        .text-xs { font-size: 0.88rem !important; }
+        .text-sm { font-size: 1rem !important; }
+        [class*="text-[10px]"], [class*="text-[11px]"] { font-size: 0.82rem !important; }
+        button, input, select, textarea { min-height: 42px; }
+        .hidden { display: none !important; }
+        input:focus-visible, select:focus-visible, button:focus-visible { outline: 3px solid #14b8a6; outline-offset: 2px; }
+        .clinical-metric { background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 10px; padding: 10px 12px; }
+        .clinical-metric strong { display: block; color: #115e59; font-size: 1.15rem; }
+        .renal-choice { display:flex; align-items:flex-start; gap:12px; padding:16px; border:2px solid rgba(255,255,255,.25); border-radius:12px; cursor:pointer; background:rgba(255,255,255,.08); transition:background .15s,border-color .15s; }
+        .renal-choice.hidden { display:none; }
+        .renal-choice:has(input:checked) { border-color:#5eead4; background:rgba(20,184,166,.25); box-shadow:0 0 0 2px rgba(94,234,212,.13); }
+        .renal-choice:focus-within { outline:3px solid #99f6e4; outline-offset:2px; }
+        .renal-choice:has(input:disabled) { opacity:.6; cursor:not-allowed; }
+
+        #fos-three-source {font-size:15px;line-height:1.65;color:#1e293b;min-width:0}
+        #fos-three-source h3 {font-size:24px;font-weight:700;margin:6px 0}
+        #fos-three-source h4 {font-size:20px;font-weight:700;color:#115e59;margin-bottom:8px}
+        #fos-three-source p {margin:8px 0}
+        .fos-panel {background:#f0fdfa;border:1px solid #99d6ce;border-radius:16px;padding:20px}
+        .fos-tag {font-size:12px;font-weight:700;color:#0f766e;letter-spacing:.08em}
+        .fos-caution {background:#fffbeb;border:1px solid #fcd34d;border-radius:10px;padding:12px;margin:12px 0}
+        .fos-context {background:#e2e8f0;border-radius:8px;padding:12px;margin:12px 0}
+        .fos-pair {display:grid;grid-template-columns:1fr;gap:16px}
+        .fos-card {background:white;padding:16px;border:1px solid #cbd5e1;border-radius:12px;min-width:0;margin:14px 0}
+        .fos-metric {color:#115e59;background:#ccfbf1;padding:8px;border-radius:6px;font-weight:600}
+        .fos-scroll {overflow-x:auto;max-width:100%;margin:14px 0}
+        #fos-three-source table {border-collapse:collapse;width:100%;font-size:14px;min-width:420px}
+        #fos-three-source th,#fos-three-source td {padding:10px;text-align:left;vertical-align:top;border:1px solid #cbd5e1}
+        #fos-three-source thead {background:#115e59;color:white}
+        #fos-three-source tbody th {background:#f1f5f9;font-weight:600}
+        #fos-three-source footer {font-size:13px;border-top:1px solid #cbd5e1;padding-top:12px;margin-top:14px;overflow-wrap:anywhere}
+        #fos-three-source a {color:#0369a1;text-decoration:underline}
+        .fos-thai-studies {background:#f0fdfa;border:1px solid #99d6ce;border-radius:16px;padding:20px}
+        .fos-thai-studies h3 {font-size:24px;font-weight:700;color:#115e59;margin:6px 0}
+        .fos-thai-studies > header {border-bottom:1px solid #99d6ce;padding-bottom:12px;margin-bottom:16px}
+        .fos-summary {background:#f0fdfa;border:1px solid #99d6ce;border-radius:16px;padding:20px}
+        .fos-summary h3 {font-size:24px;font-weight:700;color:#115e59;margin:6px 0}
+        .fos-summary > header {border-bottom:1px solid #99d6ce;padding-bottom:12px;margin-bottom:16px}
+        .fos-summary table {border-collapse:collapse;width:100%;min-width:620px;font-size:14px}
+        .fos-summary th,.fos-summary td {padding:10px;text-align:left;vertical-align:top;border:1px solid #cbd5e1}
+        .fos-summary thead {background:#115e59;color:#fff}
+        .fos-summary tbody th {background:#f1f5f9;font-weight:600}
+        .fos-summary footer {font-size:13px;border-top:1px solid #cbd5e1;padding-top:12px;margin-top:14px}
+
+        @media(max-width:600px){.fos-panel{padding:12px}.fos-card{padding:12px}}
+
+        /* Reference interface: responsive layout modelled on the approved dashboard mockup. */
+        body.ref-interface { font-family:"TH Sarabun New","TH SarabunPSK",Tahoma,sans-serif; background:#f7fbfb; color:#102d2a; font-size:16px; font-weight:400; line-height:1.32; }
+        body.ref-interface p, body.ref-interface li, body.ref-interface td { font-weight:400; }
+        body.ref-interface label { font-size:16px; font-weight:600; }
+        body.ref-interface input, body.ref-interface select { font-size:17px; font-weight:500; }
+        body.ref-interface h1, body.ref-interface h2, body.ref-interface h3, body.ref-interface h4, body.ref-interface strong, body.ref-interface button { font-weight:700; }
+        body.ref-interface .text-xs { font-size:14px !important; font-weight:500 !important; }
+        body.ref-interface .text-sm { font-size:16px !important; font-weight:500 !important; }
+        body.ref-interface header { position:relative; background:#fff; color:#0a302c; border-bottom:1px solid #bdece6; box-shadow:0 2px 14px rgba(8,91,82,.09); }
+        body.ref-interface header > div:first-child { max-width:none; padding:9px clamp(14px,2.2vw,34px); gap:18px; }
+        body.ref-interface header > div:first-child { display:flex; align-items:center; justify-content:space-between; }
+        body.ref-interface header > div:first-child > div:first-child { display:flex; align-items:center; gap:12px; flex:1 1 420px; }
+        body.ref-interface header > div:first-child > div:nth-child(2), body.ref-interface header > div:first-child > div:nth-child(2) > div { display:flex; align-items:stretch; gap:10px; }
+        body.ref-interface .hospital-logo { width:64px; height:64px; flex:none; object-fit:contain; border-radius:50%; background:#fff; }
+        body.ref-interface header h1 { color:#072d27; font-size:clamp(25px,2.1vw,34px); line-height:1.05; font-weight:700; }
+        body.ref-interface header p { color:#264f49 !important; font-size:clamp(15px,1.05vw,18px); font-weight:500; }
+        body.ref-interface header > div:first-child > div:first-child > div:first-child { background:#08776c; border-radius:9px; }
+        body.ref-interface header a, body.ref-interface header button { min-height:56px; max-width:225px; border:1px solid #bdece6 !important; background:#effbf9 !important; color:#073b35 !important; border-radius:10px !important; font-size:16px !important; font-weight:600; box-shadow:none !important; }
+        body.ref-interface header > div:last-child { background:#f1fbf9; color:#315b55 !important; border-color:#cceeea; }
+        body.ref-interface main { display:block; max-width:none; width:100%; padding:14px clamp(9px,1.1vw,20px) 24px; }
+        .ref-dashboard { display:grid; gap:16px; }
+        .ref-top, .ref-mid { display:grid; gap:14px; align-items:start; }
+        .ref-top > *, .ref-mid > * { min-width:0; }
+        .ref-card { border:1px solid #c7eeea; border-radius:12px; background:#fff; box-shadow:0 2px 9px rgba(8,91,82,.045); }
+        .ref-top > div:first-child { padding:13px !important; }
+        .ref-top > div:first-child h2 { color:#064c45; font-size:19px; border-bottom:1px solid #e2f4f1; padding-bottom:7px; margin-bottom:8px; }
+        .ref-top > div:first-child .grid { grid-template-columns:1fr; gap:2px; }
+        .ref-top > div:first-child .grid > div { display:grid; grid-template-columns:1fr 1.05fr; gap:8px; align-items:center; border-bottom:1px solid #e6f3f1; padding:2px 0; }
+        .ref-top > div:first-child .grid label { margin:0; font-size:16px; color:#193d38; }
+        .ref-top > div:first-child input, .ref-top > div:first-child select { border:0 !important; background:#f1f4f4 !important; border-radius:5px; padding:3px 8px !important; min-height:25px; font-weight:700; text-align:right; }
+        .ref-top > div:first-child .mt-5 { margin-top:10px; padding:9px; font-size:14px; }
+        .ref-renal { padding:12px !important; background:linear-gradient(125deg,#fff,#f4fffd) !important; color:#14332f !important; }
+        .ref-renal > h2 { font-size:20px; color:#064c45 !important; }
+        .ref-renal > p { color:#436863 !important; font-size:15px; margin:.25rem 0 .6rem; }
+        .ref-renal #renalEquationChoices { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+        .ref-renal .renal-choice, .ref-renal #bsaDetailsPanel { margin:0; min-height:110px; color:#102d2a; background:#f8fbfb; border:1px solid #d4e5e3; border-radius:10px; padding:9px; }
+        .ref-renal .renal-choice:has(input:checked) { background:#ecfff3; border:2px solid #16a34a; box-shadow:none; }
+        .ref-renal .renal-choice span:first-of-type { text-align:center; }
+        .ref-renal .renal-choice span:first-of-type > span:first-child { font-size:16px; }
+        .ref-renal .renal-choice span:first-of-type > span:nth-child(2) { font-size:28px; color:#062f2b; }
+        .ref-renal #bsaDetailsPanel { display:block; font-size:14px; line-height:1.25; }
+        .ref-renal #bsaDetailsPanel .text-teal-100 { color:#466861 !important; }
+        .ref-renal #bsaDetailsPanel .text-xl { color:#062f2b; }
+        .ref-renal #renalComparisonStatus { margin-top:8px; background:#def9e5; border-color:#b5ebc4; padding:7px 10px; }
+        .ref-renal > .rounded-lg.bg-amber-50 { display:none; }
+        .ref-weight { padding:13px !important; background:linear-gradient(125deg,#fff,#f7fffd) !important; }
+        .ref-weight h3 { font-size:19px; color:#064c45; }
+        .ref-weight .grid { display:block; }
+        .ref-weight .clinical-metric { display:flex; align-items:center; justify-content:space-between; margin:7px 0; padding:8px 12px; border:1px solid #d8e4e2; border-radius:8px; background:#fbfcfc; }
+        .ref-weight .clinical-metric:first-child { display:none; }
+        .ref-weight .clinical-metric strong { font-size:18px; color:#092f2b; }
+        .ref-weight .bg-teal-50 { background:#e5fff0; border-color:#80e1a8; }
+        .ref-mid > * { min-height:405px; }
+        .ref-picker { padding:10px !important; }
+        .ref-picker h2 { color:#fff !important; background:linear-gradient(90deg,#075d55,#0c8377); margin:-10px -10px 10px; padding:8px 11px; border-radius:10px 10px 0 0; font-size:18px !important; }
+        .ref-picker .flex.flex-col { display:block; }
+        .ref-picker #openBetaLactamModalBtn { display:none; }
+        .ref-picker #antibioticGrid { grid-template-columns:1fr; gap:0; margin-top:8px; }
+        .ref-picker #antibioticGrid button { justify-content:flex-start; border-radius:0; border-width:0 0 1px; padding:7px 10px; font-size:16px; }
+        .ref-picker #antibioticGrid button:first-child { border-radius:8px 8px 0 0; }
+        .ref-picker #antibioticSearch { font-size:16px; }
+        .ref-arc { margin:0 !important; padding:12px !important; border-top:5px solid #0a7b70 !important; }
+        .ref-arc h2 { font-size:20px; color:#083f3a; }
+        .ref-arc > p { font-size:15px; }
+        .ref-arc .grid { gap:8px; }
+        .ref-arc #arcScoreResult, .ref-arc #arcticScoreResult { font-size:25px; }
+        .ref-dose { border:1px solid #c7eeea; border-radius:12px; background:#fff; padding:10px; max-height:620px; overflow:auto; box-shadow:0 2px 9px rgba(8,91,82,.045); }
+        .ref-dose > div { box-shadow:none !important; }
+        @media(min-width:1280px) { .ref-top { grid-template-columns:minmax(260px,.9fr) minmax(540px,1.65fr) minmax(320px,1.15fr); } .ref-mid { grid-template-columns:minmax(380px,1.55fr) minmax(260px,1fr) minmax(400px,1.65fr); } }
+        @media(min-width:760px) and (max-width:1279px) { .ref-top { grid-template-columns:1fr 1.6fr; } .ref-weight { grid-column:1/-1; } .ref-mid { grid-template-columns:1.45fr 1fr; } .ref-dose { grid-column:1/-1; } }
+        @media(max-width:1000px) { body.ref-interface header > div:first-child { align-items:stretch; flex-direction:column; } body.ref-interface header > div:first-child > div:nth-child(2) { width:100%; } body.ref-interface header > div:first-child > div:nth-child(2) > div { width:100%; flex-wrap:wrap; } body.ref-interface header a, body.ref-interface header button { flex:1 1 180px; max-width:none; } }
+        @media(max-width:759px) { body.ref-interface header > div:first-child { align-items:stretch; } body.ref-interface header > div:first-child > div:nth-child(2) > div { flex-direction:column; } body.ref-interface header a, body.ref-interface header button { width:100%; max-width:none; min-height:42px; } .ref-top,.ref-mid { grid-template-columns:1fr; } .ref-renal #renalEquationChoices { grid-template-columns:1fr; } .ref-mid > * { min-height:auto; } .ref-dose { max-height:520px; } }
+
+        /* Clinical typography specification — Sarabun only, 400/600/700 and no body text below 16px. */
+        body.ref-interface, body.ref-interface button, body.ref-interface input, body.ref-interface select, body.ref-interface textarea {
+            font-family:"Sarabun","TH Sarabun New","TH SarabunPSK",Tahoma,sans-serif !important;
+        }
+        body.ref-interface h1 { font-size:26px !important; font-weight:700 !important; }
+        body.ref-interface header h1 + p { font-size:16px !important; font-weight:400 !important; }
+        body.ref-interface h2 { font-size:20px !important; font-weight:700 !important; }
+        body.ref-interface h3, body.ref-interface h4 { font-size:18px !important; font-weight:600 !important; }
+        body.ref-interface label, body.ref-interface .renal-choice, body.ref-interface .clinical-metric > span { font-size:16px !important; font-weight:600 !important; }
+        body.ref-interface input, body.ref-interface select, body.ref-interface button, body.ref-interface a.inline-flex { font-size:16px !important; font-weight:600 !important; }
+        body.ref-interface p, body.ref-interface li, body.ref-interface span, body.ref-interface td, body.ref-interface th, body.ref-interface summary { font-size:16px; font-weight:400; }
+        body.ref-interface strong, body.ref-interface b { font-weight:600; }
+        body.ref-interface #crclResult, body.ref-interface #bsaEgfrResult, body.ref-interface #ckdepiResult,
+        body.ref-interface #arcScoreResult, body.ref-interface #arcticScoreResult,
+        body.ref-interface #bmiResult, body.ref-interface #abwResult, body.ref-interface #ibwResult, body.ref-interface #adjbwResult {
+            font-size:28px !important; font-weight:700 !important;
+        }
+        body.ref-interface footer, body.ref-interface footer p, body.ref-interface .text-xs, body.ref-interface .text-xs *,
+        body.ref-interface .text-\[11px\], body.ref-interface .text-\[11px\] *, body.ref-interface .text-\[12px\], body.ref-interface .text-\[12px\] * {
+            font-size:14px !important; font-weight:400 !important;
+        }
+        body.ref-interface .text-sm, body.ref-interface .text-sm * { font-size:16px !important; }
+        body.ref-interface .font-light, body.ref-interface [class*="font-light"] { font-weight:400 !important; }
+        @media(min-width:760px) { body.ref-interface h1 { font-size:30px !important; } }
+
+        /* Visual treatment for renal results and ARC. */
+        body.ref-interface .ref-renal { background:linear-gradient(135deg,#ffffff 0%,#effdfa 100%) !important; border-top:5px solid #0b756a; }
+        body.ref-interface .ref-renal > h2 { display:flex; align-items:center; gap:8px; color:#07584f !important; padding-bottom:8px; border-bottom:1px solid #ccefe9; }
+        body.ref-interface .ref-renal .renal-choice, body.ref-interface .ref-renal #bsaDetailsPanel { box-shadow:0 2px 7px rgba(10,113,103,.07); }
+        body.ref-interface .ref-renal #bsaDetailsPanel { background:#f7fbfc; }
+        body.ref-interface .ref-arc { padding:0 !important; overflow:hidden; border:1px solid #b8e8e1 !important; border-top:0 !important; background:#fff; }
+        body.ref-interface .ref-arc > div:first-child { margin:0 !important; padding:10px 14px; background:linear-gradient(100deg,#075d55,#0e8f82); border:0 !important; }
+        body.ref-interface .ref-arc > div:first-child h2 { color:#fff !important; }
+        body.ref-interface .ref-arc > div:first-child span { color:#d9fffa !important; }
+        body.ref-interface .ref-arc > p, body.ref-interface .ref-arc > .grid, body.ref-interface .ref-arc > #arcAlert, body.ref-interface .ref-arc > details { margin-left:14px; margin-right:14px; }
+        body.ref-interface .ref-arc > p { margin-top:12px; }
+        body.ref-interface .ref-arc #arcScoreResult, body.ref-interface .ref-arc #arcticScoreResult { color:#075d55; }
+        body.ref-interface .ref-arc #arcAlert { background:linear-gradient(100deg,#fff1f1,#ffe5e5); border-color:#fecaca; color:#991b1b; font-weight:600; }
+        body.ref-interface .ref-arc details { margin-bottom:14px; border-top-color:#ccefe9; }
+
+        /* Version 1 — keep the original TH Sarabun presentation. */
+        body.ref-interface, body.ref-interface button, body.ref-interface input, body.ref-interface select, body.ref-interface textarea {
+            font-family:"TH Sarabun New","TH SarabunPSK","Sarabun",Tahoma,sans-serif !important;
+        }
+        body.ref-interface .ref-renal { background:linear-gradient(135deg,#073f3b 0%,#086d63 54%,#0b8d7f 100%) !important; border-color:#0b756a; box-shadow:0 9px 20px rgba(7,93,85,.18); }
+        body.ref-interface .ref-renal > h2 { color:#d6fffa !important; border-color:rgba(204,251,241,.3); font-weight:600 !important; }
+        body.ref-interface .ref-renal > p { color:#d3f7f2 !important; }
+        body.ref-interface .ref-renal .renal-choice, body.ref-interface .ref-renal #bsaDetailsPanel { background:rgba(255,255,255,.12); border-color:rgba(204,251,241,.3); color:#fff; }
+        body.ref-interface .ref-renal .renal-choice:has(input:checked) { background:rgba(22,163,74,.26); border-color:#5eead4; }
+        body.ref-interface .ref-renal .renal-choice span:first-of-type > span:nth-child(2), body.ref-interface .ref-renal #bsaDetailsPanel .text-xl { color:#fff !important; font-weight:900 !important; }
+        body.ref-interface .ref-renal #bsaDetailsPanel .text-teal-100 { color:#d3f7f2 !important; }
+        body.ref-interface .ref-renal #renalComparisonStatus { background:#d9fae5; color:#064e3b; border-color:#86efac; }
+        body.ref-interface #crclResult, body.ref-interface #bsaEgfrResult, body.ref-interface #ckdepiResult { font-weight:900 !important; }
+        body.ref-interface .arc-risk-visual { margin:12px 14px; border:1px solid #fca5a5; border-radius:13px; background:linear-gradient(105deg,#fff0f0,#ffe0e0); padding:12px; display:grid; grid-template-columns:1.2fr 1fr; gap:12px; align-items:center; }
+        body.ref-interface .arc-risk-main { display:flex; align-items:center; gap:10px; }
+        body.ref-interface .arc-risk-gauge { font-size:38px; line-height:1; }
+        body.ref-interface .arc-risk-title { font-size:18px; font-weight:700; color:#7f1d1d; }
+        body.ref-interface .arc-risk-badge { display:inline-block; margin-top:5px; padding:5px 15px; border-radius:999px; background:#c91c3d; color:#fff; font-size:20px; font-weight:700; }
+        body.ref-interface .arc-risk-checks { border-left:1px solid #fb7185; padding-left:14px; }
+        body.ref-interface .arc-risk-checks div { margin:4px 0; font-size:16px; font-weight:600; color:#7f1d1d; }
+        body.ref-interface .arc-risk-checks div::before { content:'✓'; display:inline-block; color:#be123c; font-size:21px; font-weight:900; margin-right:7px; }
+        body.ref-interface .arc-risk-visual.is-low { background:linear-gradient(105deg,#effdf7,#d7f9e6); border-color:#86efac; }
+        body.ref-interface .arc-risk-visual.is-low .arc-risk-title, body.ref-interface .arc-risk-visual.is-low .arc-risk-checks div { color:#166534; }
+        body.ref-interface .arc-risk-visual.is-low .arc-risk-badge { background:#15803d; }
+        body.ref-interface .arc-risk-visual.is-low .arc-risk-checks { border-color:#86efac; }
+        @media(max-width:600px) { body.ref-interface .arc-risk-visual { grid-template-columns:1fr; } body.ref-interface .arc-risk-checks { border-left:0; border-top:1px solid #fb7185; padding:8px 0 0; } }
+        /* Version 2 — typography comparison using Noto Sans Thai Looped. */
+        body.ref-interface.noto-interface, body.ref-interface.noto-interface button, body.ref-interface.noto-interface input, body.ref-interface.noto-interface select, body.ref-interface.noto-interface textarea {
+            font-family:"Noto Sans Thai Looped","Sarabun",Tahoma,sans-serif !important;
+        }
+        /* Version 2 balance: ARC is narrower and the antimicrobial picker has more usable room. */
+        @media(min-width:1280px) {
+            body.ref-interface.noto-interface .ref-mid {
+                grid-template-columns:minmax(310px,1.15fr) minmax(300px,1.15fr) minmax(470px,1.75fr);
+            }
+        }
+        @media(min-width:760px) and (max-width:1279px) {
+            body.ref-interface.noto-interface .ref-mid { grid-template-columns:minmax(300px,1.05fr) minmax(320px,1.25fr); }
+        }
+        body.ref-interface.noto-interface .ref-arc { max-height:575px; overflow:auto; }
+        body.ref-interface.noto-interface .ref-picker h2 { font-size:20px !important; font-weight:700 !important; line-height:1.2; }
+        body.ref-interface.noto-interface .ref-picker #antibioticSearch { font-size:16px !important; font-weight:600 !important; }
+        body.ref-interface.noto-interface .ref-picker #antibioticSearchStatus { font-size:16px !important; font-weight:400 !important; }
+        body.ref-interface.noto-interface .ref-picker #antibioticGrid button { font-size:16px !important; font-weight:600 !important; line-height:1.28; padding:9px 11px; }
+        body.ref-interface.noto-interface .ref-picker .text-\[11px\] { font-size:14px !important; font-weight:600 !important; }
+        /* Renal-estimate cards: keep the two dose-selection equations together and easy to scan. */
+        body.ref-interface.noto-interface .ref-renal > h2 { font-size:20px !important; font-weight:700 !important; }
+        body.ref-interface.noto-interface .ref-renal #cgChoiceCard { grid-column:1; grid-row:1; }
+        body.ref-interface.noto-interface .ref-renal #bsaChoiceCard { grid-column:2; grid-row:1; }
+        body.ref-interface.noto-interface .ref-renal #bsaDetailsPanel { grid-column:3; grid-row:1; }
+        body.ref-interface.noto-interface .ref-renal .renal-choice {
+            display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; text-align:center;
+        }
+        body.ref-interface.noto-interface .ref-renal .renal-choice input { margin:0; }
+        body.ref-interface.noto-interface .ref-renal .renal-choice span:first-of-type { text-align:center; width:100%; }
+        body.ref-interface.noto-interface .ref-renal .renal-choice span:first-of-type > span:nth-child(2),
+        body.ref-interface.noto-interface .ref-renal #bsaDetailsPanel .text-xl {
+            font-size:34px !important; line-height:1.05; font-weight:900 !important;
+        }
+        body.ref-interface.noto-interface .ref-renal #bsaDetailsPanel { text-align:center; }
+        body.ref-interface.noto-interface .ref-renal #bsaDetailsPanel > div:first-child {
+            justify-content:center !important; text-align:center; flex-direction:column; gap:3px;
+        }
+        body.ref-interface.noto-interface .ref-renal #bsaDetailsPanel > div { text-align:center; }
+        @media(max-width:759px) {
+            body.ref-interface.noto-interface .ref-renal #cgChoiceCard,
+            body.ref-interface.noto-interface .ref-renal #bsaChoiceCard,
+            body.ref-interface.noto-interface .ref-renal #bsaDetailsPanel { grid-column:auto; grid-row:auto; }
+        }
+    </style>
+</head>
+<body class="ref-interface noto-interface bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- TOP NAVIGATION BAR / HEADER -->
+    <header class="bg-teal-700 text-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div class="flex items-center gap-3">
+                <img src="wch-logo.jpg" alt="โลโก้โรงพยาบาลวิเชียรบุรี" class="hospital-logo" />
+                <div>
+                    <h1 class="text-lg md:text-xl font-bold tracking-tight">ระบบคำนวณขนาดยาต้านจุลชีพตามการทำงานของไต</h1>
+                    <p class="text-xs text-teal-100 font-medium mt-0.5">โรงพยาบาลวิเชียรบุรี | Antimicrobial Renal-Dose Calculator</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-stretch md:items-end gap-2 w-full md:w-auto">
+                <!-- ปุ่มกลุ่มทางด้านบนขวา -->
+                <div class="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
+                    <!-- ปุ่มใหม่: แนวทางการใช้ยาต้านจุลชีพ (วางด้านหน้าคำแนะนำการใช้ยาต้านจุลชีพ) -->
+                    <a href="https://asp2-six.vercel.app/" 
+                       target="_blank" 
+                       class="inline-flex items-center justify-center gap-1.5 bg-white text-teal-800 hover:bg-teal-50 active:bg-teal-100 font-bold text-xs px-3 py-2 rounded-lg shadow-sm border border-teal-100 transition-all text-center">
+                        🌐 แนวทางการใช้ยาต้านจุลชีพ
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1WuIkz6m7udY3wBetW-EQdDHsv-qMqBsU?usp=sharing" 
+                       target="_blank" 
+                       class="inline-flex items-center justify-center gap-1.5 bg-white text-teal-800 hover:bg-teal-50 active:bg-teal-100 font-bold text-xs px-3 py-2 rounded-lg shadow-sm border border-teal-100 transition-all text-center">
+                        📚 คำแนะนำการใช้ยาต้านจุลชีพ
+                    </a>
+                    <button id="openSpectrumModalBtn" 
+                            type="button" 
+                            class="inline-flex items-center justify-center gap-1.5 bg-white text-teal-800 hover:bg-teal-50 active:bg-teal-100 font-bold text-xs px-3 py-2 rounded-lg shadow-sm border border-teal-100 transition-all text-center cursor-pointer">
+                        🦠 ค้นหายาต้านจุลชีพที่ครอบคลุมเชื้อก่อโรค
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- NOTICE / DISCLAIMER BAR -->
+        <div class="bg-teal-800/80 border-t border-teal-600 px-4 py-2 text-xs text-teal-50">
+            <div class="max-w-7xl mx-auto">
+                <strong>หมายเหตุ:</strong> *การปรับขนาดยาพิจารณาปัจจัยอื่นๆ ด้วย เช่น สภาวะผู้ป่วยที่ส่งผลต่อ pharmacokinetics ของยา เช่น sepsis/septic shock, ADHF, AKI และ ARC เป็นต้น
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN INTERACTIVE SECTION -->
+    <main class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 flex-grow w-full">
+        
+        <!-- LEFT PANEL: PATIENT PARAMETERS (5 Columns) -->
+        <section class="lg:col-span-5 space-y-6">
+            
+            <!-- Patient Demographics Input Card -->
+            <div class="bg-white p-5 rounded-xl shadow-xs border border-slate-200">
+                <h2 class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2 pb-2 border-b border-slate-100">
+                    <span class="text-teal-600">📋</span> ข้อมูลผู้ป่วย (Patient Biometrics)
+                </h2>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">เพศ (Sex)</label>
+                        <select id="sex" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-teal-600 transition-all">
+                            <option value="male">ชาย (Male)</option>
+                            <option value="female">หญิง (Female)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">อายุ (Age - ปี)</label>
+                        <input type="number" id="age" value="65" min="1" max="120" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-teal-600 transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">น้ำหนัก (Weight - kg)</label>
+                        <input type="number" id="weight" value="60" min="1" max="300" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-teal-600 transition-all">
+                    </div>
+                    <div>
+                    <label for="height" class="block text-xs font-semibold text-slate-600 uppercase mb-1">ส่วนสูง (Height - cm) <span class="normal-case font-normal">ไม่บังคับ</span></label>
+                        <input type="number" id="height" value="165" min="100" max="250" step="0.1" placeholder="เว้นว่างได้" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-teal-600 transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Scr (mg/dL)</label>
+                        <input type="number" id="scr" value="1.5" step="0.1" min="0.1" max="15" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-teal-600 transition-all">
+                    </div>
+                </div>
+
+                <p id="inputWarning" role="alert" aria-live="polite" class="hidden mt-3 text-sm font-semibold text-rose-700 bg-rose-50 border border-rose-200 rounded-lg p-3"></p>
+                <p id="heightOptionalNote" class="hidden mt-3 text-sm font-semibold text-sky-800 bg-sky-50 border border-sky-200 rounded-lg p-3">ไม่ได้กรอกส่วนสูง: ระบบจะแสดงเฉพาะ Cockcroft–Gault โดยใช้ Actual Body Weight (ABW)</p>
+                <!-- Hemodialysis Modifier Box Checkbox -->
+                <div class="mt-5 p-3.5 bg-amber-50 border border-amber-200 rounded-xl flex items-start gap-3 shadow-2xs">
+                    <input type="checkbox" id="hdCheckbox" class="mt-1 w-4 h-4 text-teal-600 border-slate-300 rounded focus:ring-teal-500 cursor-pointer">
+                    <label for="hdCheckbox" class="cursor-pointer select-none">
+                        <span class="block text-sm font-bold text-amber-900">ผู้ป่วยได้รับการบำบัดทดแทนไต (Maintenance Hemodialysis)</span>
+                        <span class="block text-xs text-amber-700 mt-0.5">เปิดตัวเลือกนี้เพื่อระบุสถานะล้างไตระบบฟอกเลือด ซึ่งระบบจะแนะนำขนาดยาสำหรับ Hemodialysis โดยตรง</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Auto-Calculated Diagnostic Results Output Card -->
+            <div class="bg-gradient-to-br from-teal-800 to-slate-900 text-white p-5 rounded-xl shadow-md space-y-4">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-teal-300">🫘 ผลการคำนวณการทำงานของไตอัตโนมัติ</h2>
+                
+                <p class="text-sm text-teal-100">เลือกสูตรที่ต้องการใช้จัดกลุ่มขนาดยาทางด้านขวา (กดที่การ์ด)</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="renalEquationChoices" role="radiogroup" aria-label="สูตรคำนวณสำหรับคำแนะนำขนาดยา">
+                    <label class="renal-choice" id="cgChoiceCard">
+                        <input type="radio" name="renalEquation" value="cg" checked class="accent-teal-300 w-5 h-5" />
+                        <span class="flex-1"><span class="block text-base font-bold">Cockcroft–Gault</span><span id="crclResult" class="block text-3xl font-bold">--</span><span class="text-sm">eCrCl (mL/min)</span></span>
+                    </label>
+                    <label class="renal-choice" id="bsaChoiceCard">
+                        <input type="radio" name="renalEquation" value="bsa" class="accent-teal-300 w-5 h-5" />
+                        <span class="flex-1"><span class="block text-base font-bold">BSA-adjusted CKD-EPI 2021</span><span id="bsaEgfrResult" class="block text-3xl font-bold">--</span><span class="text-sm">eGFR (mL/min)</span></span>
+                    </label>
+                </div>
+                <div id="bsaDetailsPanel" class="bg-white/10 border border-white/20 rounded-lg p-3 space-y-1">
+                    <div class="flex flex-wrap justify-between items-center gap-2"><span class="text-sm font-semibold">CKD-EPI 2021 (indexed; สำหรับดูค่าเท่านั้น)</span><span id="ckdepiResult" class="text-xl font-bold">--</span></div>
+                    <div class="text-sm text-teal-100">eGFR (mL/min/1.73 m²) · ไม่ใช้เป็นตัวเลือกจัดกลุ่มขนาดยา</div>
+                    <div class="text-sm text-teal-100">BSA (Du Bois): <strong id="bsaResult">--</strong> m²</div>
+                    <details class="text-sm"><summary class="cursor-pointer underline underline-offset-2">รายละเอียดการปรับ BSA</summary><p class="mt-1">BSA = 0.007184 × น้ำหนักจริง(kg)^0.425 × ส่วนสูง(cm)^0.725; eGFR ที่ปรับ BSA = CKD-EPI 2021 × BSA / 1.73</p><a href="https://doi.org/10.1093/ajhp/zxae317" target="_blank" rel="noopener noreferrer" class="underline text-teal-200">NKF consensus statement (AJHP 2025)</a></details>
+                </div>
+                <div id="renalComparisonStatus" class="rounded-lg bg-teal-50 text-teal-950 border border-teal-200 p-3 text-sm font-semibold" aria-live="polite">--</div>
+                <div class="rounded-lg bg-amber-50 text-amber-950 border border-amber-300 p-3 text-sm leading-relaxed"><strong>⚠️ คำเตือน:</strong> หากทั้งสองสูตรจัดกลุ่มขนาดยาต่างกัน ให้ประเมินเป็นรายกรณี โดยพิจารณาขนาดยาตามตาราง, ความรุนแรงของการติดเชื้อ, MIC และความเสี่ยง toxicity</div>
+                <div class="rounded-xl bg-white text-slate-800 p-4 space-y-3" id="bodyWeightPanel" aria-live="polite">
+                    <h3 class="font-bold text-teal-900">⚖️ Dosing Weight สำหรับ Cockcroft–Gault</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                        <div class="clinical-metric"><span class="text-xs">BMI (kg/m²)</span><strong id="bmiResult">--</strong></div>
+                        <div class="clinical-metric"><span class="text-xs">ABW (kg)</span><strong id="abwResult">--</strong></div>
+                        <div class="clinical-metric"><span class="text-xs">IBW (kg)</span><strong id="ibwResult">--</strong></div>
+                        <div class="clinical-metric"><span class="text-xs">AdjBW (kg)</span><strong id="adjbwResult">--</strong></div>
+                    </div>
+                    <div class="bg-teal-50 border border-teal-300 rounded-lg p-3">
+                        <p class="text-sm font-bold text-teal-900">น้ำหนักที่แนะนำ: <span id="dosingWeightResult">--</span></p>
+                        <p class="text-sm text-slate-700 mt-1" id="dosingWeightAdvice">กรอกข้อมูลผู้ป่วยให้ครบเพื่อดูคำแนะนำ</p>
+                    </div>
+                    <details class="text-sm text-slate-600">
+                        <summary class="cursor-pointer font-semibold text-teal-800">ดูสูตรคำนวณและเกณฑ์เลือกน้ำหนัก</summary>
+                        <div class="mt-2 space-y-1">
+                            <p>IBW (ชาย) = 50 + 2.3 × (ส่วนสูงเป็นนิ้ว − 60); หญิง = 45.5 + 2.3 × (ส่วนสูงเป็นนิ้ว − 60)</p>
+                            <p>AdjBW = IBW + 0.4 × (ABW − IBW)</p>
+                            <p>BMI &lt; 18.5: ABW · BMI 18.5–&lt;25: IBW · BMI ≥ 25: AdjBW</p>
+                            <p class="text-xs">อ้างอิง: Pharmacotherapy. 2012;32:604; Drug Intell Clin Pharm. 1974;8:650 (ตามเอกสารประกอบ)</p>
+                            <p class="text-xs text-amber-800">ใช้เพื่อประมาณ CrCl ในผู้ใหญ่ ไม่ใช่คำแนะนำเลือกน้ำหนักสำหรับการคำนวณขนาดยา mg/kg ทุกชนิด</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div id="dialysisStatusBadge" class="hidden text-center bg-amber-500 text-slate-950 font-bold text-xs py-1.5 rounded-md uppercase tracking-wider shadow-sm">
+                    ⚠️ โหมดการทำงาน: แสดงสูตรยาสำหรับผู้ป่วยฟอกเลือด (Hemodialysis)
+                </div>
+            </div>
+
+
+            <!-- ARC screening: after kidney estimates, before medication choice -->
+            <section id="arcPanel" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-4" aria-labelledby="arcTitle">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-3">
+                <h2 id="arcTitle" class="text-lg font-bold text-slate-900">🧭 ARC Risk Assessment</h2>
+                <span class="text-sm text-slate-500">Screening • ไม่ใช่การยืนยัน ARC</span>
+              </div>
+              <p class="text-sm text-slate-700">ประเมินความเสี่ยง Augmented Renal Clearance (ARC) โดยใช้ ARC score; ในผู้ป่วย trauma ICU สามารถดู ARCTIC score เพิ่มเติมได้</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="flex items-center gap-2 rounded-lg border border-slate-200 p-3 text-sm font-semibold"><input id="arcTrauma" type="checkbox" class="h-5 w-5 accent-teal-700"> มีประวัติ Trauma / Trauma ICU</label>
+                <label class="block text-sm font-semibold text-slate-800">SOFA score (0–24)
+                  <input id="arcSofa" type="number" min="0" max="24" step="1" placeholder="ระบุ SOFA score" class="block mt-1 w-full rounded-lg border border-slate-300 p-2.5 text-base">
+                </label>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="rounded-xl bg-teal-50 border border-teal-200 p-4">
+                  <div class="font-bold text-teal-900">ARC Scoring System</div>
+                  <div id="arcScoreResult" class="text-3xl font-bold text-teal-950 mt-1">-- / 10</div>
+                  <p id="arcScoreStatus" class="text-sm mt-1 text-teal-900" aria-live="polite">กรอก SOFA เพื่อประเมินคะแนน</p>
+                  <p class="text-xs text-slate-600 mt-2">Age ≤50: 6 • Trauma: 3 • SOFA ≤4: 1; 0–6 low, 7–10 high</p>
+                </div>
+                <div class="rounded-xl bg-sky-50 border border-sky-200 p-4">
+                  <div class="font-bold text-sky-900">ARCTIC (Trauma ICU only)</div>
+                  <div id="arcticScoreResult" class="text-3xl font-bold text-sky-950 mt-1">-- / 9</div>
+                  <p id="arcticScoreStatus" class="text-sm mt-1 text-sky-900" aria-live="polite">เลือก Trauma เพื่อแสดงผล</p>
+                  <p class="text-xs text-slate-600 mt-2">SCr &lt;62 µmol/L: 3 • ชาย: 2 • อายุ ≤56: 4; 57–75: 3</p>
+                </div>
+              </div>
+              <div id="arcAlert" class="rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm text-slate-700" role="status" aria-live="polite">ARC screening ช่วยระบุผู้มีความเสี่ยง แต่ไม่ยืนยันการเกิด ARC</div>
+              <details class="text-sm text-slate-700 border-t pt-3">
+                <summary class="cursor-pointer font-bold text-teal-800">คำแนะนำเรื่องการให้ยาต้านจุลชีพเมื่อสงสัย ARC และเอกสารอ้างอิง</summary>
+                <div class="mt-3 space-y-2 leading-relaxed">
+                  <p>1. พิจารณาวัด creatinine clearance จาก timed urine collection อย่างน้อย 8 ชั่วโมง และติดตามซ้ำตามการเปลี่ยนแปลงทางคลินิก</p>
+                  <p>2. ทบทวนความเหมาะสมของขนาดยาสูงสุดที่ได้รับอนุมัติตามข้อบ่งใช้และการทำงานของไต; สำหรับ β-lactams พิจารณา prolonged/continuous infusion โดยคำนึงถึงความคงตัวของยา</p>
+                  <p>3. ใช้ therapeutic drug monitoring (TDM) เมื่อทำได้ โดยเฉพาะ vancomycin (AUC-guided) และ aminoglycosides; ประเมิน MIC, PK/PD, การติดเชื้อ และ toxicity ร่วมกัน</p>
+                  <p>4. หากยังไม่บรรลุเป้าหมายอาจพิจารณายาทางเลือกตามความไวของเชื้อและข้อบ่งใช้</p>
+                  <p class="text-xs text-slate-500">ที่มา: Chen IH, Nicolau DP. Augmented Renal Clearance and How to Augment Antibiotic Dosing. Antibiotics. 2020;9:393. doi:10.3390/antibiotics9070393. ข้อมูลเป็นแนวทาง ไม่ใช่คำสั่งเพิ่มขนาดยาอัตโนมัติ</p>
+                  <p class="text-xs text-amber-800">หมายเหตุ: ภาพประกอบให้เกณฑ์ ARCTIC &gt;6 high risk แต่บทความหน้า 4 ระบุจุดตัด ≥6; ระบบนี้ใช้ ≥6 ตามข้อความในบทความ และอายุ ≤56 ตามบทความ (ภาพระบุ &lt;56)</p>
+                </div>
+              </details>
+            </section>
+
+            <!-- ปุ่มประเมินความพึงพอใจของผู้ใช้ (วางใต้กล่องผลการคำนวณการทำงานของไตอัตโนมัติ) -->
+            <div class="pt-2">
+                <button id="openFeedbackModalBtn" class="w-full bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white font-bold text-sm py-3 px-4 rounded-xl shadow-sm border border-teal-500 flex items-center justify-center gap-2 transition-all cursor-pointer">
+                    <span>📋</span> ประเมินความพึงพอใจของผู้ใช้
+                </button>
+            </div>
+        </section>
+        
+        <!-- RIGHT PANEL: ANTIBIOTIC LIBRARY AND DOSING REFERENCE DISPLAY (7 Columns) -->
+        <section class="lg:col-span-7 space-y-6">
+            
+            <!-- Antibiotic Selection Panel -->
+            <div class="bg-white p-5 rounded-xl shadow-xs border border-slate-200">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3 pb-2 border-b border-slate-100">
+                    <div>
+                        <h2 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                            <span class="text-teal-600">💊</span> เลือกยาต้านจุลชีพที่ต้องการใช้ (Select Antimicrobial)
+                        </h2>
+                        <!-- ย้าย Data Sources แท็กมาไว้ใต้หัวข้อตรงนี้ -->
+                        <div class="mt-1.5 inline-block bg-teal-50 border border-teal-200 text-teal-800 text-[11px] font-semibold px-2.5 py-0.5 rounded-md">
+                            📦 Data Sources: Lexidrug, Sanford, Micromedex
+                        </div>
+                    </div>
+                    <!-- ปุ่มเปิด Modal คำแนะนำ Beta-lactams -->
+                    <button id="openBetaLactamModalBtn" class="inline-flex items-center gap-1.5 bg-sky-50 text-sky-800 hover:bg-sky-100 font-bold text-xs px-3 py-1.5 rounded-lg border border-sky-200 transition-all cursor-pointer">
+                        <span>💡</span> คำแนะนำการบริหารยากลุ่ม Beta-lactams
+                    </button>
+                </div>
+
+                <div class="mt-4">
+                    <label for="antibioticSearch" class="sr-only">ค้นหาชื่อยา</label>
+                    <input id="antibioticSearch" type="search" autocomplete="off" placeholder="พิมพ์เพื่อค้นหาชื่อยา เช่น mero, coli, fosfo" class="w-full rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 text-sm focus:outline-teal-600" />
+                    <p id="antibioticSearchStatus" class="mt-2 text-xs text-slate-500" aria-live="polite">แสดงยา 8 รายการ</p>
+                </div>
+                <p id="antibioticNoResults" class="hidden mt-3 rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm font-semibold text-amber-900">ไม่พบชื่อยาที่ค้นหา</p>
+                <div id="antibioticGrid" class="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    <!-- Buttons are injected dynamically inside the core JavaScript Engine -->
+                </div>
+            </div>
+
+            <!-- Dynamic Dosing Result Output Presentation Target Container -->
+            <div id="dosingDisplayDeck" class="space-y-4">
+                <div class="bg-slate-100 border border-dashed border-slate-300 p-12 rounded-xl text-center text-slate-400">
+                    <span class="block text-3xl mb-2">🔍</span>
+                    Please select an antibiotic above to display renal function dose adjustments.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL POPUP 1: คำแนะนำการบริหารยากลุ่ม BETA-LACTAMS -->
+    <div id="betaLactamModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col overflow-hidden border border-slate-200">
+            <!-- Modal Header -->
+            <div class="bg-teal-700 text-white px-6 py-4 flex justify-between items-center">
+                <h3 class="text-base md:text-lg font-bold flex items-center gap-2">
+                    <span>💉</span> คำแนะนำการบริหารยากลุ่ม Beta-lactams แบบ Prolonged Infusion
+                </h3>
+                <button id="closeBetaLactamModalBtn" class="text-teal-100 hover:text-white text-2xl font-bold cursor-pointer leading-none">&times;</button>
+            </div>
+            
+            <!-- Modal Body (Scrollable) -->
+            <div class="p-6 overflow-y-auto space-y-5 text-xs md:text-sm text-slate-700 leading-relaxed">
+                <div class="bg-sky-50 border-l-4 border-sky-500 p-3.5 rounded-r-lg">
+                    <h4 class="font-bold text-sky-900 text-sm">🎯 เป้าหมายการรักษา (Therapeutic Goal):</h4>
+                    <p class="text-sky-800 mt-1">บรรลุ Minimum PK/PD target อย่างน้อย <strong>100% fT &gt; MIC</strong></p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-sm border-b pb-1">💊 รายการยาควบคุมในโรงพยาบาลที่เข้าข่าย:</h4>
+                    <div class="grid grid-cols-2 gap-2 mt-2">
+                        <div class="bg-slate-50 p-2 rounded border border-slate-200 font-medium">• Imipenem/Cilastatin</div>
+                        <div class="bg-slate-50 p-2 rounded border border-slate-200 font-medium">• Meropenem</div>
+                        <div class="bg-slate-50 p-2 rounded border border-slate-200 font-medium">• Piperacillin/Tazobactam</div>
+                        <div class="bg-slate-50 p-2 rounded border border-slate-200 font-medium">• Cefoperazone/Sulbactam</div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-sm border-b pb-1">👥 กลุ่มผู้ป่วยที่ควรได้รับการปรับวิธีบริหารยา (Patient Selection):</h4>
+                    <p class="text-xs text-slate-500 mb-2">ผู้ป่วยที่มีภาวะส่งผลต่อ PK/PD ซึ่งเสี่ยงที่จะทำให้ระดับยาในเลือดต่ำกว่าปกติ ได้แก่:</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>ผู้ป่วยวิกฤต (Critical Illness):</strong> ผู้ป่วยใน ICU, sepsis, หรือ septic shock</li>
+                        <li><strong>ผู้ป่วยที่ใช้อุปกรณ์ Extracorporeal devices:</strong> ECMO, Kidney replacement therapy, Plasmapheresis หรือ Blood purification/adsorptive systems (เช่น Hemoadsorption)</li>
+                        <li><strong>ผู้ป่วยที่มีภาวะการทำงานของไตผิดปกติ:</strong> Acute kidney injury (AKI), Chronic kidney disease (CKD) หรือภาวะ Augmented renal clearance (ARC)</li>
+                        <li>ผู้ป่วยที่ติดเชื้อแบคทีเรียดื้อยา</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-sm border-b pb-1">⏱️ วิธีการบริหารยา (Administration Strategy):</h4>
+                    <ul class="list-disc pl-5 space-y-1.5 mt-2">
+                        <li><strong>Loading Dose:</strong> บริหารยาแบบ Loading dose (drip 30 นาที) ในเข็มแรกเสมอ</li>
+                        <li><strong>Maintenance Dose:</strong> บริหารยาภายใน 3-4 ชั่วโมง หลังจากการให้ Loading dose แบบ Prolonged infusion[cite: 2] ดังนี้:
+                            <ul class="list-circle pl-5 mt-1 space-y-1 text-teal-800 font-semibold">
+                                <li>• Meropenem: Drip &gt; 3 ชั่วโมง</li>
+                                <li>• Imipenem/Cilastatin: Drip &gt; 3 ชั่วโมง</li>
+                                <li>• Piperacillin/Tazobactam: Drip &gt; 4 ชั่วโมง</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-1 text-sm border-b pb-1">🔄 การปรับขนาดยา (Dose Adjustment) ในผู้ป่วย Critical Illness:</h4>
+                    <ul class="list-disc pl-5 space-y-1 mt-2">
+                        <li>เริ่มต้นแนะนำให้ใช้ <strong>Full dose สูงสุด 72 ชั่วโมง</strong> จากนั้นประเมินและปรับขนาดยาตามการทำงานของไต</li>
+                        <li>หากภาวะ AKI ไม่ดีขึ้นภายใน 48 ชั่วโมง พิจารณาปรับลดขนาดยาตามความเหมาะสม</li>
+                        <li>กรณีมีโรคประจำตัวเป็น CKD แนะนำให้เริ่มยาแบบ Full dose ในช่วง 24-48 ชั่วโมงแรก</li>
+                    </ul>
+                </div>
+
+                <div class="bg-amber-50 border border-amber-200 p-3.5 rounded-xl">
+                    <h4 class="font-bold text-amber-900 text-sm">⚠️ ข้อบ่งชี้สำหรับการพิจารณาใช้ขนาดยาสูง (Higher Dose Requirements):</h4>
+                    <ul class="list-disc pl-5 mt-2 space-y-1 text-amber-800 text-xs">
+                        <li>ความรุนแรงของโรคสูง เช่น APACHE II score &gt; 16 หรือผู้ป่วยภูมิคุ้มกันบกพร่อง</li>
+                        <li>ผู้ป่วยโรคอ้วน (Obesity)</li>
+                        <li>การติดเชื้อปริมาณมาก (High-inoculum infections) หรือตำแหน่งที่ผ่านเข้าไปได้น้อย</li>
+                        <li>การทำงานของไตปกติ หรือมีแนวโน้มเกิดภาวะ ARC ในช่วงเริ่มการรักษา</li>
+                        <li>มีความเสี่ยงต่อการติดเชื้อแบคทีเรียดื้อยา</li>
+                    </ul>
+                </div>
+
+                <div class="text-[10px] text-slate-400 border-t pt-3 space-y-0.5">
+                    <p><strong>เอกสารอ้างอิง:</strong></p>
+                    <p>1. Consensus Guidance for Beta-Lactam Antibiotic Dose Individualization in Acutely Ill (Pharmacotherapy 2026)</p>
+                    <p>2. Sepsis Guideline 2026 | 3. Optimizing Beta-Lactam in Clinical Practice</p>
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="bg-slate-100 px-6 py-3 border-t border-slate-200 text-right">
+                <button id="closeBetaLactamModalFooterBtn" class="bg-teal-700 hover:bg-teal-800 text-white font-bold text-xs px-4 py-2 rounded-lg cursor-pointer transition-all">
+                    ตกลง / ปิดหน้าต่าง
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP 2: แบบประเมินความพึงพอใจของผู้ใช้ -->
+    <div id="feedbackModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden border border-slate-200">
+            <!-- Modal Header -->
+            <div class="bg-teal-700 text-white px-6 py-4 flex justify-between items-center">
+                <div>
+                    <h3 class="text-base font-bold">แบบประเมินความพึงพอใจการใช้งานระบบ</h3>
+                    <p class="text-xs text-teal-100">ความคิดเห็นของท่านมีคุณค่าอย่างยิ่งในการพัฒนาระบบต่อไป</p>
+                </div>
+                <button id="closeFeedbackModalBtn" class="text-teal-100 hover:text-white text-2xl font-bold cursor-pointer leading-none">&times;</button>
+            </div>
+
+            <!-- Modal Form Body -->
+            <form id="feedbackForm" class="p-6 space-y-4 text-xs md:text-sm">
+                <!-- 1. ความสะดวกในการใช้งาน -->
+                <div class="space-y-1.5">
+                    <label class="font-bold text-slate-800 block">1. ความสะดวกในการใช้งานระบบ</label>
+                    <div class="rating-options">
+                        <div class="rating-option"><input type="radio" id="u1" name="usability" value="1" required><label for="u1">1</label></div>
+                        <div class="rating-option"><input type="radio" id="u2" name="usability" value="2"><label for="u2">2</label></div>
+                        <div class="rating-option"><input type="radio" id="u3" name="usability" value="3"><label for="u3">3</label></div>
+                        <div class="rating-option"><input type="radio" id="u4" name="usability" value="4"><label for="u4">4</label></div>
+                        <div class="rating-option"><input type="radio" id="u5" name="usability" value="5"><label for="u5">5</label></div>
+                    </div>
+                    <div class="flex justify-between text-[10px] text-slate-400 px-1"><span>น้อยที่สุด</span><span>มากที่สุด</span></div>
+                </div>
+
+                <!-- 2. ความสวยงาม -->
+                <div class="space-y-1.5">
+                    <label class="font-bold text-slate-800 block">2. ความสวยงามและความเป็นระเบียบของหน้าจอ</label>
+                    <div class="rating-options">
+                        <div class="rating-option"><input type="radio" id="d1" name="design" value="1" required><label for="d1">1</label></div>
+                        <div class="rating-option"><input type="radio" id="d2" name="design" value="2"><label for="d2">2</label></div>
+                        <div class="rating-option"><input type="radio" id="d3" name="design" value="3"><label for="d3">3</label></div>
+                        <div class="rating-option"><input type="radio" id="d4" name="design" value="4"><label for="d4">4</label></div>
+                        <div class="rating-option"><input type="radio" id="d5" name="design" value="5"><label for="d5">5</label></div>
+                    </div>
+                    <div class="flex justify-between text-[10px] text-slate-400 px-1"><span>น้อยที่สุด</span><span>มากที่สุด</span></div>
+                </div>
+
+                <!-- 3. เนื้อหา -->
+                <div class="space-y-1.5">
+                    <label class="font-bold text-slate-800 block">3. ความถูกต้องและความสมบูรณ์ของเนื้อหา</label>
+                    <div class="rating-options">
+                        <div class="rating-option"><input type="radio" id="c1" name="content" value="1" required><label for="c1">1</label></div>
+                        <div class="rating-option"><input type="radio" id="c2" name="content" value="2"><label for="c2">2</label></div>
+                        <div class="rating-option"><input type="radio" id="c3" name="content" value="3"><label for="c3">3</label></div>
+                        <div class="rating-option"><input type="radio" id="c4" name="content" value="4"><label for="c4">4</label></div>
+                        <div class="rating-option"><input type="radio" id="c5" name="content" value="5"><label for="c5">5</label></div>
+                    </div>
+                    <div class="flex justify-between text-[10px] text-slate-400 px-1"><span>น้อยที่สุด</span><span>มากที่สุด</span></div>
+                </div>
+
+                <!-- 4. ข้อเสนอแนะ -->
+                <div class="space-y-1.5">
+                    <label class="font-bold text-slate-800 block" for="feedbackText">4. ข้อเสนอแนะเพิ่มเติม / สิ่งที่ต้องการให้ปรับปรุง</label>
+                    <textarea id="feedbackText" name="feedback" rows="3" placeholder="ระบุความคิดเห็นของคุณที่นี่ (ถ้ามี)..." class="w-full border border-slate-300 rounded-lg p-2.5 text-xs focus:outline-teal-600 focus:ring-1 focus:ring-teal-600 resize-y"></textarea>
+                </div>
+
+                <!-- Footer Buttons -->
+                <div class="flex justify-end gap-2 pt-3 border-t border-slate-100">
+                    <button type="button" id="cancelFeedbackBtn" class="bg-slate-100 hover:bg-slate-200 text-slate-600 font-semibold px-4 py-2 rounded-lg cursor-pointer transition-all">ยกเลิก</button>
+                    <button type="submit" id="btnSubmitFeedback" class="bg-teal-700 hover:bg-teal-800 text-white font-bold px-5 py-2 rounded-lg cursor-pointer transition-all">ส่งแบบประเมิน</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP 3: ค้นหายาต้านจุลชีพที่ครอบคลุมเชื้อก่อโรค (Antimicrobial Spectrum Search) -->
+    <div id="spectrumModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden border border-slate-200">
+            <!-- Modal Header -->
+            <div class="bg-teal-700 text-white px-6 py-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="bg-teal-600 p-2 rounded-lg text-xl">🦠</div>
+                    <div>
+                        <h3 class="text-base md:text-lg font-bold">Antibiotic Spectrum Search</h3>
+                        <p class="text-xs text-teal-100">ค้นหายาต้านจุลชีพที่ครอบคลุมเชื้อโรค</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button type="button" id="refBtnModal" class="bg-teal-800 hover:bg-teal-900 text-white font-bold text-xs px-3 py-1.5 rounded-lg border border-teal-600 transition-all cursor-pointer">References</button>
+                    <button id="closeSpectrumModalBtn" class="text-teal-100 hover:text-white text-2xl font-bold cursor-pointer leading-none">&times;</button>
+                </div>
+            </div>
+            
+            <!-- Modal Body (Scrollable) -->
+            <div class="p-6 overflow-y-auto space-y-6 text-xs md:text-sm text-slate-700 leading-relaxed bg-slate-50 flex-grow">
+                <!-- Search Card -->
+                <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-xs">
+                    <label for="pathogen" class="block font-bold text-slate-900 mb-2">พิมพ์ชื่อเชื้อโรค (ภาษาอังกฤษ)</label>
+                    <div class="flex gap-2 flex-wrap">
+                        <input id="pathogen" type="text" placeholder="เช่น MRSA, E. coli, Pseudomonas..." autocomplete="off" spellcheck="false" class="flex-1 min-w-[220px] bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-teal-600 transition-all" />
+                        <button type="button" id="searchBtn" class="bg-teal-700 hover:bg-teal-800 text-white font-bold px-5 py-2 rounded-lg cursor-pointer transition-all">ค้นหา</button>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 mt-3" id="chips"></div>
+                </div>
+
+                <div id="empty" class="bg-white border border-dashed border-slate-300 p-10 rounded-xl text-center text-slate-400">
+                    <span class="block text-3xl mb-2">🔍</span>
+                    พิมพ์ชื่อเชื้อโรคแล้วกดปุ่ม <strong>ค้นหา</strong><br/>ระบบจะแสดงรายการยาต้านจุลชีพที่ครอบคลุมเชื้อนั้น
+                </div>
+                
+                <div id="none" class="bg-white border border-dashed border-rose-300 p-10 rounded-xl text-center text-rose-500" hidden>
+                    ❌ ไม่พบข้อมูลสำหรับเชื้อที่ค้นหา<br/>ลองใช้ชื่อวิทยาศาสตร์ เช่น MRSA, E. coli, Pseudomonas
+                </div>
+
+                <section id="results" hidden class="space-y-4">
+                    <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-slate-200">
+                        <div class="flex items-center gap-2">
+                            <h2 class="font-bold text-slate-900 text-base">ผลการค้นหา</h2>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-bold px-2.5 py-1 rounded-md" id="pathogenBadge"></span>
+                        </div>
+                        <span class="text-xs text-slate-500 font-medium" id="count"></span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="grid"></div>
+                </section>
+
+                <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl flex gap-3 text-amber-900 text-xs">
+                    <span class="text-base">⚠️</span>
+                    <p><strong>คำเตือนสำคัญ:</strong> ข้อมูลนี้เป็นภาพรวมทั่วไปจากบทความรีวิวทางการแพทย์ ความไวของเชื้อในแต่ละพื้นที่อาจแตกต่างกันมาก ควรใช้ร่วมกับ <strong>Antibiogram ของโรงพยาบาล</strong> ผลเพาะเชื้อ และแนวทางปฏิบัติท้องถิ่นเสมอ ไม่ใช่เครื่องมือตัดสินใจทางคลินิกโดยตรง</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUB-MODAL: References สำหรับเครื่องมือค้นหาเชื้อ -->
+    <div id="refModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-60 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-lg max-h-[85vh] flex flex-col overflow-hidden border border-slate-200">
+            <div class="bg-teal-700 text-white px-6 py-4 flex justify-between items-center">
+                <h3 class="text-base font-bold">References</h3>
+                <button id="closeRef" class="text-teal-100 hover:text-white text-2xl font-bold cursor-pointer leading-none">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-4 text-xs text-slate-700">
+                <p class="text-slate-500">Spectrum summaries in this tool are synthesized from peer-reviewed clinical pharmacology reviews, infectious-diseases textbooks, and open educational resources. Correlate with local antibiograms and current guidelines.</p>
+                <ol id="refList" class="list-decimal pl-4 space-y-2"></ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- SYSTEM GLOBAL FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-5 mt-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-1">
+            <p><strong>Clinical Decision Support Tool Disclaimer:</strong> This application provides antibiotic renal dosage recommendations based on clinical guidelines. Final clinical decisions must be evaluated by attending physicians and clinical pharmacists.</p>
+            <p class="text-slate-600">&copy; 2026 Pharmacy Department, Wichianburi Hospital. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE CALCULATION ENGINE & COMPREHENSIVE DOSING CLINICAL DATABASE -->
+    <!-- Static deployment: medicine data is maintained in this HTML file. -->
+    <!-- Legacy Netlify admin markup is intentionally disabled for the static Vercel release.
+    <div id="adminModal" hidden aria-hidden="true">
+        <div class="w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white shadow-2xl">
+            <div class="sticky top-0 flex items-center justify-between border-b border-slate-200 bg-white px-6 py-4">
+                <div><h2 id="adminTitle" class="text-lg font-bold text-slate-900">Admin update workspace</h2><p class="text-sm text-slate-500">จัดเตรียมข้อมูลเพื่อทบทวนก่อนปรับฐานข้อมูลยา</p></div>
+                <button id="closeAdminModalBtn" type="button" class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-900" aria-label="ปิด">✕</button>
+            </div>
+            <div id="adminGate" class="m-6 rounded-xl border border-teal-200 bg-teal-50 p-5 text-sm text-teal-950">
+                <h3 class="font-bold text-base">ต้องเข้าสู่ระบบสำหรับผู้ดูแล</h3>
+                <p id="adminGateMessage" class="mt-2">เข้าสู่ระบบด้วย Netlify Identity เพื่อเปิด Admin update workspace</p>
+                <button id="adminLoginBtn" type="button" class="mt-4 rounded-lg bg-teal-700 px-4 py-2 font-bold text-white hover:bg-teal-800">เข้าสู่ระบบ Admin</button>
+            </div>
+            <div id="adminProtectedContent" class="hidden">
+            <form id="adminUpdateForm" class="space-y-4 p-6">
+                <div class="rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900"><strong>เฉพาะผู้ดูแล:</strong> ข้อมูลนี้เป็นฉบับร่างในเบราว์เซอร์เครื่องนี้เท่านั้น และยังไม่เปลี่ยนคำแนะนำขนาดยาที่เผยแพร่จนกว่าจะผ่านการตรวจทานทางคลินิก</div>
+                <details class="rounded-xl border border-teal-200 bg-teal-50 p-3 text-sm text-teal-950" open><summary class="cursor-pointer font-bold">วิธีใช้ Admin update workspace</summary><ol class="mt-2 list-decimal space-y-1 pl-5"><li>เลือกไฟล์ Word/PDF ที่มีข้อมูลชื่อยา ขนาดยา และ references ครบถ้วน</li><li>หากไฟล์เดียวมีหลายตัวยา <strong>ไม่ต้องกรอกชื่อยาทุกตัว</strong>; ระบุเพียงชื่อเอกสารหรือขอบเขตของการปรับปรุงในช่องด้านล่าง (หรือเว้นว่างได้)</li><li>ระบบไม่อ่านหรือเปลี่ยนขนาดยาอัตโนมัติ: ผู้ทบทวนต้องตรวจข้อมูลในเอกสารก่อนปรับฐานข้อมูลยา</li><li>บันทึกฉบับร่างเพื่อเก็บรายการอ้างอิงในเบราว์เซอร์ แล้วส่งออก JSON เมื่อต้องการส่งต่อรายการให้ผู้ดูแลเว็บพร้อมแนบไฟล์ต้นฉบับ</li></ol><p class="mt-2 text-xs">ไฟล์ JSON เก็บข้อมูลคำขอและชื่อไฟล์เท่านั้น ไม่ได้บรรจุไฟล์ Word/PDF จึงต้องแนบเอกสารต้นฉบับร่วมด้วย</p></details>
+                <label class="block text-sm font-semibold text-slate-700">ชื่อเอกสารหรือขอบเขตการปรับปรุง <span class="font-normal">(ไม่บังคับ)</span><input id="adminDocumentTitle" maxlength="160" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 font-normal" placeholder="เช่น Updated renal dosing: cefixime, levofloxacin และ ciprofloxacin" /></label>
+                <label class="block text-sm font-semibold text-slate-700">หมายเหตุสำหรับผู้ทบทวน <span class="font-normal">(ไม่บังคับ)</span><textarea id="adminNotes" rows="3" maxlength="1000" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 font-normal" placeholder="ระบุสิ่งที่ต้องการปรับ หรือข้อสังเกตเกี่ยวกับเอกสาร"></textarea></label>
+                <label class="admin-file-label" for="adminFiles"><span>📎 แนบเอกสารประกอบ<br><span class="text-xs font-normal">PDF, DOCX, XLSX, CSV, TXT หรือ JSON</span></span><input id="adminFiles" type="file" class="sr-only" multiple required accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.txt,.json" /></label>
+                <p id="adminFileStatus" class="text-sm text-slate-500" aria-live="polite">ยังไม่ได้เลือกเอกสาร</p>
+                <div class="flex flex-wrap justify-end gap-2"><button id="exportAdminDraftsBtn" type="button" class="rounded-lg border border-slate-300 px-4 py-2 text-sm font-bold text-slate-700 hover:bg-slate-50">ส่งออกฉบับร่าง JSON</button><button type="submit" class="rounded-lg bg-teal-700 px-4 py-2 text-sm font-bold text-white hover:bg-teal-800">บันทึกฉบับร่าง</button></div>
+            </form>
+            <div class="border-t border-slate-200 px-6 py-5"><h3 class="font-bold text-slate-900">ฉบับร่างที่บันทึกไว้ในเบราว์เซอร์</h3><div id="adminDraftList" class="mt-3 space-y-2"><p class="text-sm text-slate-500">ยังไม่มีฉบับร่าง</p></div></div>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <script>
+        // Responsive reference dashboard: only changes presentation; clinical IDs and calculation logic remain intact.
+        (() => {
+            const main = document.querySelector('main');
+            const patientSection = main?.children[0];
+            const medicationSection = main?.children[1];
+            if (!main || !patientSection || !medicationSection) return;
+            const patientCard = patientSection.children[0];
+            const renalCard = patientSection.children[1];
+            const picker = medicationSection.children[0];
+            const dosingDeck = document.getElementById('dosingDisplayDeck');
+            const weightPanel = document.getElementById('bodyWeightPanel');
+            const arcPanel = document.getElementById('arcPanel');
+            const feedback = document.getElementById('openFeedbackModalBtn')?.parentElement;
+            const bsaDetails = document.getElementById('bsaDetailsPanel');
+            const equationChoices = document.getElementById('renalEquationChoices');
+            if (!patientCard || !renalCard || !picker || !dosingDeck || !weightPanel || !arcPanel || !bsaDetails || !equationChoices) return;
+
+            // Make all three renal estimates visible side-by-side, while keeping both dose-selection radios working.
+            bsaDetails.remove();
+            equationChoices.insertBefore(bsaDetails, equationChoices.children[1]);
+            weightPanel.remove();
+
+            patientCard.classList.add('ref-card');
+            renalCard.classList.add('ref-card', 'ref-renal');
+            weightPanel.classList.add('ref-card', 'ref-weight');
+            picker.classList.add('ref-card', 'ref-picker');
+            arcPanel.classList.add('ref-card', 'ref-arc');
+            dosingDeck.classList.add('ref-dose');
+
+            const arcVisual = document.createElement('section');
+            arcVisual.className = 'arc-risk-visual';
+            arcVisual.setAttribute('aria-live', 'polite');
+            arcVisual.innerHTML = `<div class="arc-risk-main"><div class="arc-risk-gauge">🧭</div><div><div class="arc-risk-title">ผลการประเมินความเสี่ยง ARC</div><div class="arc-risk-badge">กำลังประเมิน…</div></div></div><div class="arc-risk-checks"><div>ARC score ≥ 7</div><div>ARCTIC score ≥ 6</div><div>มีปัจจัย Trauma</div></div>`;
+            const arcAlert = document.getElementById('arcAlert');
+            arcAlert?.before(arcVisual);
+            const updateArcVisual = () => {
+                const arcScore = parseInt((document.getElementById('arcScoreResult')?.textContent || '').match(/\d+/)?.[0] || '0', 10);
+                const arcticScore = parseInt((document.getElementById('arcticScoreResult')?.textContent || '').match(/\d+/)?.[0] || '0', 10);
+                const hasTrauma = Boolean(document.getElementById('arcTrauma')?.checked);
+                const highRisk = arcScore >= 7 || arcticScore >= 6;
+                arcVisual.classList.toggle('is-low', !highRisk);
+                const badge = arcVisual.querySelector('.arc-risk-badge');
+                if (badge) badge.textContent = highRisk ? 'ความเสี่ยงสูง (High risk)' : 'ความเสี่ยงต่ำ (Low risk)';
+                const checks = arcVisual.querySelectorAll('.arc-risk-checks div');
+                checks[0]?.classList.toggle('opacity-40', arcScore < 7);
+                checks[1]?.classList.toggle('opacity-40', arcticScore < 6);
+                checks[2]?.classList.toggle('opacity-40', !hasTrauma);
+            };
+            new MutationObserver(updateArcVisual).observe(document.getElementById('arcScoreResult'), {childList:true, characterData:true, subtree:true});
+            new MutationObserver(updateArcVisual).observe(document.getElementById('arcticScoreResult'), {childList:true, characterData:true, subtree:true});
+            document.getElementById('arcTrauma')?.addEventListener('change', updateArcVisual);
+            updateArcVisual();
+
+            const dashboard = document.createElement('div'); dashboard.className = 'ref-dashboard';
+            const top = document.createElement('div'); top.className = 'ref-top';
+            const middle = document.createElement('div'); middle.className = 'ref-mid';
+            const evidence = document.createElement('aside'); evidence.className = 'ref-card ref-evidence';
+            evidence.innerHTML = `<h2>📖 หลักฐาน/แหล่งอ้างอิง<br><span class="text-sm font-normal">(Evidence &amp; Reference)</span></h2><h3>🎯 แหล่งอ้างอิงหลัก</h3><ul class="list-disc pl-5"><li>แนวทางการใช้ยาต้านจุลชีพของโรงพยาบาล</li><li>คู่มือการให้ยากลุ่ม β-lactam และ prolonged infusion</li><li>Sanford Guide, Lexidrug และ Micromedex</li><li>เอกสารกำกับยาและแหล่งอ้างอิงรายยา</li></ul><h3>📄 สรุปหลักฐานสำคัญ</h3><ul class="list-disc pl-5"><li>ARC พบได้ในผู้ป่วยวิกฤต/บาดเจ็บรุนแรง และสัมพันธ์กับระดับยาต่ำกว่าที่ต้องการ</li><li>พิจารณาการให้ยาขนาดเหมาะสมร่วมกับ prolonged/continuous infusion ตามข้อบ่งใช้</li><li>ควรพิจารณา TDM เมื่อทำได้เพื่อเพิ่มประสิทธิผลและความปลอดภัย</li></ul><a class="mt-3 block rounded-lg border border-teal-200 bg-teal-50 p-2 text-center font-bold text-teal-800" href="https://drive.google.com/drive/folders/1WuIkz6m7udY3wBetW-EQdDHsv-qMqBsU?usp=sharing" target="_blank" rel="noopener">ดูรายละเอียดแนวทางและเอกสารอ้างอิงฉบับเต็ม ↗</a>`;
+            top.append(patientCard, renalCard, weightPanel);
+            // ARC อยู่ซ้ายสุด; กล่องค้นหา/เลือกยาอยู่ติดกับคำแนะนำขนาดยา
+            middle.append(arcPanel, picker, dosingDeck);
+            dashboard.append(top, middle);
+            if (feedback) dashboard.append(feedback);
+            main.replaceChildren(dashboard);
+        })();
+
+        // --- 1. GLOBAL COMPREHENSIVE CLINICAL DATABASE MATRIX (ALL ENGLISH RECOMMENDATIONS) ---
+        const antibioticDatabase = [
+            {
+                id: "meropenem",
+                name: "1. Meropenem",
+                sources: {
+                    lexidrug: {
+                        title: "Lexidrug™ (UpToDate®)",
+                        ranges: [
+                            { min: 130, max: 999, isArcRow: true, "Dose 1 g Target": "ARC: 2 g loading dose (infused over 30 mins) followed by 2 g infused over 3 hours every 8 hours", "Dose 2 g Target": "ARC: 2 g loading dose (infused over 30 mins) followed by 2 g infused over 3 hours every 8 hours" },
+                            { min: 50, max: 129, "Dose 1 g Target": "1 g every 8 hours (No dosage adjustment necessary)", "Dose 2 g Target": "2 g every 8 hours (No dosage adjustment necessary)" },
+                            { min: 25, max: 49, "Dose 1 g Target": "1 g every 12 hours", "Dose 2 g Target": "2 g every 12 hours" },
+                            { min: 10, max: 24, "Dose 1 g Target": "500 mg every 12 hours", "Dose 2 g Target": "1 g every 12 hours" },
+                            { min: 0, max: 9, "Dose 1 g Target": "500 mg every 24 hours", "Dose 2 g Target": "1 g every 24 hours OR 500 mg every 12 hours" }
+                        ],
+                        hd: "500 mg every 24 hours (Thrice weekly)",
+                        pd: "500 mg every 24 hours"
+                    },
+                    sanford: {
+                        title: "SANFORD Guide",
+                        ranges: [
+                            { min: 50, max: 999, "Recommended Dose": "No dosage adjustment necessary" },
+                            { min: 26, max: 49, "Recommended Dose": "1 g every 12 hours" },
+                            { min: 10, max: 25, "Recommended Dose": "500 mg every 12 hours" },
+                            { min: 0, max: 9, "Recommended Dose": "500 mg every 24 hours" }
+                        ],
+                        hd: "500 mg every 24 hours (Administer after dialysis on dialysis days)",
+                        pd: "500 mg every 24 hours"
+                    }
+                }
+            },
+            {
+                id: "colistin",
+                name: "2. Colistin",
+                sources: {
+                    lexidrug: {
+                        title: "Lexidrug™ (UpToDate®)",
+                        notes: "For critically ill patients, a loading dose of 300 mg should be administered followed by a maintenance dose based on CrCl starting 12 hours later.",
+                        ranges: [
+                            { min: 130, max: 999, "Maintenance Dose": "360 mg/day (ARC)" },
+                            { min: 50, max: 129, "Maintenance Dose": "300 mg/day" },
+                            { min: 30, max: 49, "Maintenance Dose": "183 - 250 mg/day" },
+                            { min: 10, max: 29, "Maintenance Dose": "150 - 183 mg/day" },
+                            { min: 0, max: 9, "Maintenance Dose": "117 mg/day" }
+                        ],
+                        hd: "Loading dose: 300 mg. Dialysis day: 180 mg on dialysis days (administered after dialysis). Nondialysis day: 130 mg.",
+                        pd: "Loading dose 300 mg followed by 150-200 mg once daily as maintenance starting 24 hours after loading dose."
+                    }
+                }
+            },
+            {
+                id: "piptazo",
+                name: "3. Piperacillin/Tazobactam",
+                sources: {
+                    lexidrug: {
+                        title: "Lexidrug™ (UpToDate®)",
+                        ranges: [
+                            { min: 130, max: 999, "Traditional Method": "4.5 g every 6 hours infused over 3 hours", "Extended Infusion": "4.5 g every 6 hours infused over 3 hours" },
+                            { min: 100, max: 129, "Traditional Method": "Extended infusion preferred", "Extended Infusion": "3.375 or 4.5 g infused over 4 hours every 6 hours" },
+                            { min: 40, max: 99, "Traditional (If 3.375g target)": "3.375 g every 6 hours", "Traditional (If 4.5g target)": "4.5 g every 6 hours", "Extended Infusion": "3.375 g infused over 4 hours every 8 hours" },
+                            { min: 20, max: 39, "Traditional (If 3.375g target)": "4.5 g every 8 hours or 3.375 g every 6 hours", "Traditional (If 4.5g target)": "2.25 g every 6 hours", "Extended Infusion": "3.375 g infused over 4 hours every 8 to 12 hours" },
+                            { min: 0, max: 19, "Traditional (If 3.375g target)": "4.5 g every 12 hours or 2.25 g every 6 hours", "Traditional (If 4.5g target)": "2.25 g every 8 hours", "Extended Infusion": "3.375 g infused over 4 hours every 12 hours" }
+                        ],
+                        hd: "4.5 g every 12 hours OR 2.25 g every 8 hours (administered after hemodialysis on dialysis days is preferred)",
+                        pd: "4.5 g every 12 hours OR 2.25 g every 8 hours"
+                    },
+                    sanford: {
+                        title: "SANFORD Guide",
+                        ranges: [
+                            { min: 40, max: 999, "Extended Infusion": "No dosage adjustment", "Intermittent (Nosocomial Pneumonia)": "No dosage adjustment", "Intermittent (All Other Indications)": "No dosage adjustment" },
+                            { min: 20, max: 39, "Extended Infusion": "No dosage adjustment", "Intermittent (Nosocomial Pneumonia)": "3.375 g every 6 hours", "Intermittent (All Other Indications)": "2.25 g every 6 hours" },
+                            { min: 0, max: 19, "Extended Infusion": "4.5 g (over 4 hours) every 12 hours", "Intermittent (Nosocomial Pneumonia)": "2.25 g every 6 hours", "Intermittent (All Other Indications)": "2.25 g every 8 hours" }
+                        ],
+                        hd: "Extended infusion: 4.5 g (over 4 hours) every 12 hours | Intermittent Nosocomial pneumonia: 2.25 g every 8 hours (+0.75 g AD) | Other indications: 2.25 g every 12 hours (+0.75 g AD)",
+                        pd: "CAPD: Nosocomial pneumonia: 2.25 g every 8 hours | All other indications: 2.25 g every 12 hours"
+                    }
+                }
+            },
+            {
+                id: "imipenem",
+                name: "4. Imipenem/Cilastatin",
+                sources: {
+                    lexidrug: {
+                        title: "Lexidrug™ (UpToDate®)",
+                        ranges: [
+                            { min: 130, max: 999, "If Target 500mg q6h / 1g q8h": "1 g every 6 hours", "If Target 1g q6h": "1 g every 6 hours" },
+                            { min: 60, max: 129, "If Target 500mg q6h / 1g q8h": "No dosage adjustment necessary", "If Target 1g q6h": "No dosage adjustment necessary" },
+                            { min: 30, max: 59, "If Target 1g q8h": "500 mg every 8 hours", "If Target 500mg q6h": "250 mg every 6 hours or 500 mg every 8 hours", "If Target 1g q6h": "500 mg every 6 hours" },
+                            { min: 15, max: 29, "If Target 1g q8h": "250 mg every 8 hours or 500 mg every 12 hours", "If Target 500mg q6h": "250 mg every 8 hours or 500 mg every 12 hours", "If Target 1g q6h": "250 mg every 6 hours" },
+                            { min: 0, max: 14, "Clinical Precaution": "Do not administer imipenem/cilastatin unless hemodialysis is instituted within 48 hours" }
+                        ],
+                        hd: "250-500 mg every 12 hours depending on infection type and severity. Schedule one dose post-dialysis on dialysis days.",
+                        pd: "250-500 mg every 12 hours"
+                    },
+                    sanford: {
+                        title: "SANFORD Guide",
+                        ranges: [
+                            { min: 90, max: 999, "If Target 500mg q6h": "No dosage adjustment necessary", "If Target 1g q8h": "No dosage adjustment necessary", "If Target 1g q6h": "No dosage adjustment necessary" },
+                            { min: 60, max: 89, "If Target 500mg q6h": "400 mg every 6 hours", "If Target 1g q8h": "500 mg every 6 hours", "If Target 1g q6h": "750 mg every 8 hours" },
+                            { min: 30, max: 59, "If Target 500mg q6h": "300 mg every 6 hours", "If Target 1g q8h": "500 mg every 8 hours", "If Target 1g q6h": "500 mg every 6 hours" },
+                            { min: 15, max: 29, "If Target 500mg q6h": "200 mg every 6 hours", "If Target 1g q8h": "500 mg every 12 hours", "If Target 1g q6h": "500 mg every 12 hours" }
+                        ],
+                        hd: "Target 500mg q6h: 200 mg every 6 hours (AD) | Target 1g q8h: 500 mg every 12 hours (AD) | Target 1g q6h: 500 mg every 12 hours (AD)",
+                        pd: "CAPD: No data"
+                    }
+                }
+            },
+            {
+                id: "cefoperazone",
+                name: "5. Cefoperazone/Sulbactam",
+                sources: {
+                    lexidrug: {
+                        title: "Lexidrug™ (UpToDate®)",
+                        ranges: [
+                            { min: 30, max: 999, "Recommended Dose": "No dosage adjustment necessary" },
+                            { min: 15, max: 29, "Recommended Dose": "Maximum 1 g sulbactam every 12 hours" },
+                            { min: 0, max: 14, "Recommended Dose": "Maximum 500 mg sulbactam every 12 hours" }
+                        ],
+                        hd: "Administer after hemodialysis on dialysis days",
+                        pd: "No data available"
+                    },
+                    sanford: {
+                        title: "SANFORD Guide",
+                        ranges: [
+                            { min: 30, max: 999, "Recommended Dose": "No dosage adjustment necessary" },
+                            { min: 15, max: 29, "Recommended Dose": "1 g sulbactam every 12 hours" },
+                            { min: 0, max: 14, "Recommended Dose": "500 mg sulbactam every 12 hours" }
+                        ],
+                        hd: "Sulbactam 500 mg every 12 hours (AD on dialysis days)",
+                        pd: "CAPD: No data"
+                    }
+                }
+            },
+            {
+                id: "vancomycin",
+                name: "6. Vancomycin",
+                sources: {
+                    lexidrug: {
+                        title: "Lexidrug™ (UpToDate®)",
+                        ranges: [
+                            { min: 90, max: 999, "Suggested Loading Dose": "25 to 30 mg/kg", "Suggested Dosing Interval": "8 to 12 hours", "Initial Maintenance Dose": "15 to 20 mg/kg" },
+                            { min: 50, max: 89, "Suggested Loading Dose": "20 to 25 mg/kg", "Suggested Dosing Interval": "12 hours", "Initial Maintenance Dose": "15 to 20 mg/kg" },
+                            { min: 15, max: 49, "Suggested Loading Dose": "20 to 25 mg/kg", "Suggested Dosing Interval": "24 hours", "Initial Maintenance Dose": "10 to 15 mg/kg" },
+                            { min: 0, max: 14, "Suggested Loading Dose": "20 to 25 mg/kg", "Suggested Dosing Interval": "48 to 72 hours", "Initial Maintenance Dose": "10 to 15 mg/kg" }
+                        ],
+                        hd: "Low Flux: Loading 25 mg/kg, Maintenance 7.5 mg/kg post-HD | High Flux: Loading 25 mg/kg, Maintenance 10 mg/kg AD",
+                        pd: "Loading 20-25 mg/kg. Serum level check 48-72h post loading dose, subsequent doses 10-15 mg/kg based on attainment of goal concentrations."
+                    },
+                    sanford: {
+                        title: "SANFORD Guide",
+                        ranges: [
+                            { min: 100, max: 999, "Recommended Dose": "No dosage adjustment" },
+                            { min: 50, max: 99, "Recommended Dose": "15-20 mg/kg every 12 hours" },
+                            { min: 20, max: 49, "Recommended Dose": "15-20 mg/kg every 24 hours" },
+                            { min: 0, max: 19, "Recommended Dose": "15-20 mg/kg every 48 hours" }
+                        ],
+                        hd: "Low Permeability: LD 25 mg/kg, MD 7.5 mg/kg AD | High Permeability: LD 25 mg/kg, MD 10 mg/kg AD",
+                        pd: "CAPD: 7.5 mg/kg every 48-96 hours"
+                    }
+                }
+            },
+            {
+                id: "ceftazidime",
+                name: "7. Ceftazidime",
+                sources: {
+                    sanford: {
+                        title: "SANFORD Guide",
+                        ranges: [
+                            { min: 50, max: 999, "Recommended Dose": "No dosage adjustment" },
+                            { min: 10, max: 49, "Recommended Dose": "1-2 g every 12-24 hours" },
+                            { min: 0, max: 9, "Recommended Dose": "1-2 g every 24 hours" }
+                        ],
+                        hd: "0.5-1 g every 24 hours (AD on dialysis days)",
+                        pd: "CAPD: No data available"
+                    }
+                }
+            },
+            {
+                id: "levofloxacin",
+                name: "8. Levofloxacin",
+                sources: {
+                    sanford: {
+                        title: "SANFORD Guide",
+                        ranges: [
+                            { min: 50, max: 999, "Recommended Dose": "No dosage adjustment" },
+                            { min: 20, max: 49, "Recommended Dose": "750 mg PO/IV every 48 hours" },
+                            { min: 0, max: 19, "Recommended Dose": "750 mg x 1, then 500 mg every 48 hours" }
+                        ],
+                        hd: "750 mg x 1, then 500 mg every 48 hours",
+                        pd: "CAPD: 750 mg x 1, then 500 mg every 48 hours"
+                    }
+                }
+            },
+            {
+                id: "ciprofloxacin",
+                name: "9. Ciprofloxacin",
+                sources: {
+                    sanford: {
+                        title: "SANFORD Guide",
+                        ranges: [
+                            { min: 50, max: 999, "Injection (IV)": "No dosage adjustment", "Tablet (Non-ER)": "No dosage adjustment" },
+                            { min: 30, max: 49, "Injection (IV)": "200-400 mg every 18-24 hours", "Tablet (Non-ER)": "250-500 mg every 12 hours" },
+                            { min: 5, max: 29, "Injection (IV)": "200-400 mg every 24 hours", "Tablet (Non-ER)": "250-500 mg every 18 hours" },
+                            { min: 0, max: 4, "Injection (IV)": "200-400 mg every 24 hours", "Tablet (Non-ER)": "250-500 mg every 24 hours" }
+                        ],
+                        hd: "Injection: 200-400 mg every 24 hours (AD) | Tablet: 250-500 mg every 24 hours (AD)",
+                        pd: "CAPD: 250-500 mg every 24 hours"
+                    }
+                }
+            },
+            {
+                id: "gentamicin",
+                name: "10. Gentamicin",
+                sources: {
+                    sanford: {
+                        title: "SANFORD Guide",
+                        ranges: [
+                            { min: 60, max: 999, "Gram Negative": "No dosage adjustment", "Gram Positive Synergy": "No dosage adjustment" },
+                            { min: 40, max: 59, "Gram Negative": "1.7-2.0 mg/kg every 12-24 hours", "Gram Positive Synergy": "1 mg/kg every 12 hours" },
+                            { min: 20, max: 39, "Gram Negative": "1.7-2.0 mg/kg every 12-24 hours", "Gram Positive Synergy": "1 mg/kg every 24 hours" },
+                            { min: 10, max: 19, "Gram Negative": "1.7-2.0 mg/kg every 12-24 hours", "Gram Positive Synergy": "1 mg/kg, then dose by serum level" },
+                            { min: 0, max: 9, "Gram Negative": "1.7-2.0 mg/kg every 48 hours", "Gram Positive Synergy": "1 mg/kg, then dose by serum level" }
+                        ],
+                        hd: "Gram Negative: 1.7-2.0 mg/kg every 48 hours (+extra 0.85-1.0 mg/kg AD) | Synergy: 1 mg/kg every 48-72 hours (dose AD)",
+                        pd: "CAPD for peritonitis only: 0.6 mg/kg IP once daily"
+                    }
+                }
+            },
+            {
+                id: "amikacin",
+                name: "11. Amikacin",
+                sources: {
+                    sanford: {
+                        title: "SANFORD Guide",
+                        ranges: [
+                            { min: 50, max: 999, "Gram Negative": "No dosage adjustment" },
+                            { min: 10, max: 49, "Gram Negative": "7.5 mg/kg every 24 hours" },
+                            { min: 0, max: 9, "Gram Negative": "7.5 mg/kg every 48 hours" }
+                        ],
+                        hd: "7.5 mg/kg every 48 hours (+extra 3.75 mg/kg AD)",
+                        pd: "CAPD for peritonitis only: 2 mg/kg IP once daily"
+                    }
+                }
+            },
+            {
+                id: "fosfomycin",
+                name: "12. Fosfomycin",
+                sources: {
+                    eucast: {
+                        title: "ตารางเดิม: EUCAST MIC criteria (Leelawattanachai et al. 2020, Table 2)",
+                        reference: 'Leelawattanachai P, et al. Antibiotics. 2020;9:615. Table 2 (EUCAST breakpoint column). <a class="underline" href="https://doi.org/10.3390/antibiotics9090615" target="_blank" rel="noopener noreferrer">doi:10.3390/antibiotics9090615</a>',
+                        notes: 'เป็นข้อเสนอขนาดยาจากงาน Monte Carlo simulation โดยใช้เกณฑ์ MIC ≤32 mg/L ของ EUCAST ในขณะศึกษา ไม่ใช่ขนาดยาแนะนำโดย EUCAST โดยตรง; ใช้ CrCl จาก Cockcroft–Gault (CG) และเป้าหมาย AUC24/MIC ≥21.5 ซึ่งต่างจากงานปี 2024. คงขนาดยารวมต่อวันจากตารางเดิมไว้.',
+                        matching: 'upperExclusive', 
+                        ranges: [
+                            { min: 80, max: Infinity, label: "≥80", "Dosage Regimen": "8 g/day (1h or 4h infusion)", "Adjustment": "No dosage adjustment" },
+                            { min: 50, max: 80, label: "50–79 (≥50 ถึง <80)", "Dosage Regimen": "6 g/day (1h or 4h infusion)", "Adjustment": "Reduce by 25%" },
+                            { min: 30, max: 50, label: "30–49 (≥30 ถึง <50)", "Dosage Regimen": "4 g/day (1h or 4h infusion)", "Adjustment": "Reduce by 50%" },
+                            { min: 15, max: 30, label: "15–29 (≥15 ถึง <30)", "Dosage Regimen": "3 g/day (1h or 4h infusion)", "Adjustment": "Reduce by 62.5%" },
+                            { min: 0, max: 15, label: "0–14 (≥0 ถึง <15)", "Dosage Regimen": "2 g/day (1h infusion)", "Adjustment": "Reduce by 75%" }
+                        ]
+                    },
+                    wangchinda2024: {
+                        title: "ตารางใหม่: Wangchinda et al. JAC 2024, Table 3 (1 h infusion)",
+                        reference: 'Wangchinda W, et al. Population pharmacokinetic/pharmacodynamic target attainment analysis of IV fosfomycin for the treatment of MDR Gram-negative bacterial infections. J Antimicrob Chemother. 2024;79:1372–1379. Table 3. <a class="underline" href="https://doi.org/10.1093/jac/dkae111" target="_blank" rel="noopener noreferrer">doi:10.1093/jac/dkae111</a>',
+                        notes: 'ข้อเสนอจาก population PK/Monte Carlo simulation เพื่อให้ PTA ≥90% ที่ MIC 32 mg/L และเป้าหมาย AUC24/MIC 98.9; ให้ IV infusion นาน 1 ชั่วโมงทุกขนาดยา. การจัดกลุ่มในงานศึกษาใช้ estimated CrCl จาก Cockcroft–Gault (CG). การเลือก BSA-adjusted CKD-EPI 2021 ในแอปนี้ใช้เพื่อเปรียบเทียบเท่านั้น ไม่ใช่สูตรที่ใช้สร้าง Table 3. ช่วง >180 mL/min ไม่ได้ศึกษา/จำลอง จึงไม่ขยายขนาดยาออกไป. งานศึกษาขนาดเล็ก 24 ราย ไม่รวมผู้รับ renal replacement therapy และยังต้องยืนยันผลทางคลินิก.',
+                        matching: 'lowerExclusive',
+                        ranges: [
+                            { min: 0, max: 30, label: "≤30", "Dosage Regimen": "2 g q12h (4 g/day)", "Infusion": "1 h" },
+                            { min: 30, max: 60, label: "31–60 (>30 ถึง ≤60)", "Dosage Regimen": "4 g q12h (8 g/day)", "Infusion": "1 h" },
+                            { min: 60, max: 90, label: "61–90 (>60 ถึง ≤90)", "Dosage Regimen": "4 g q8h (12 g/day)", "Infusion": "1 h" },
+                            { min: 90, max: 120, label: "91–120 (>90 ถึง ≤120)", "Dosage Regimen": "5 g q8h (15 g/day)", "Infusion": "1 h" },
+                            { min: 120, max: 150, label: "121–150 (>120 ถึง ≤150)", "Dosage Regimen": "6 g q8h (18 g/day)", "Infusion": "1 h" },
+                            { min: 150, max: 180, label: "151–180 (>150 ถึง ≤180)", "Dosage Regimen": "7 g q8h (21 g/day)", "Infusion": "1 h" }
+                        ]
+                    }
+                }
+            },
+            {
+                id: "cefazolin",
+                name: "13. Cefazolin",
+                sources: {
+                    micromedex: {
+                        title: "Micromedex Reference",
+                        ranges: [
+                            { min: 55, max: 999, "Recommended Dose": "No dosage adjustment" },
+                            { min: 35, max: 54, "Recommended Dose": "1-2 g every 8 hours or longer" },
+                            { min: 11, max: 34, "Recommended Dose": "1-2 g every 12 hours" },
+                            { min: 0, max: 10, "Recommended Dose": "1-2 g every 18-24 hours" }
+                        ],
+                        hd: "0.5-1 g every 24 hours OR 1-2 g every 48-72 hours plus 0.5-1 g AD",
+                        pd: "Intermittent: 15 mg/kg daily for long dwell; 20 mg/kg daily for short dwell. Continuous: LD 500 mg/L, then MD 125 mg/L."
+                    }
+                }
+            },
+            {
+                id: "amoxiclav",
+                name: "14. Amoxicillin/Clavulanate",
+                sources: {
+                    micromedex: {
+                        title: "Micromedex & SANFORD Reference Tables",
+                        ranges: [
+                            { min: 30, max: 999, "Injection (IV)": "No dosage adjustment", "Tablet (Non-ER)": "No dosage adjustment" },
+                            { min: 10, max: 29, "Injection (IV)": "1.2 g x 1 dose, then 600 mg every 12 hours", "Tablet (Non-ER)": "Amoxicillin 500 mg / clavulanic acid 125 mg every 12 hours" },
+                            { min: 0, max: 9, "Injection (IV)": "1.2 g x 1 dose, then 600 mg every 24 hours", "Tablet (Non-ER)": "250 mg/125 mg q12h OR 500 mg/125 mg q24h depending on indication" }
+                        ],
+                        hd: "Injection: 1.2 g x 1 dose, then 600 mg every 24 hours (+ extra dose AD) | Tablet: 500 mg/100 mg q24h plus additional dose during and post dialysis",
+                        pd: "CAPD: Amoxicillin 250 mg every 12 hours (Clavulanic acid dose should be 50-75% of normal dose)"
+                    }
+                }
+            },
+            {
+                id: "ampicillin",
+                name: "15. Ampicillin",
+                sources: {
+                    micromedex: {
+                        title: "Micromedex Reference",
+                        ranges: [
+                            { min: 50, max: 999, "Recommended Dose (Injection)": "No dosage adjustment" },
+                            { min: 10, max: 49, "Recommended Dose (Injection)": "1-2 g every 6-12 hours" },
+                            { min: 0, max: 9, "Recommended Dose (Injection)": "1-2 g every 12-24 hours" }
+                        ],
+                        hd: "1-2 g every 12-24 hours (administer after dialysis on dialysis days for every 24 hours dosing)",
+                        pd: "250 mg every 12 hours"
+                    }
+                }
+            },
+            {
+                id: "cefixime",
+                name: "Cefixime",
+                sources: {
+                    sanford: {
+                        title: "SANFORD Guide",
+                        reference: "SANFORD Guide (transcribed from the administrator-supplied reference document)",
+                        matching: "lowerExclusive",
+                        notes: "Cefixime renal-dose table from the uploaded SANFORD Guide reference. Verify formulation, indication, and current source edition before prescribing.",
+                        ranges: [
+                            { min: 60, max: 999, label: "> 60", "Recommended Dose": "400 mg q24h" },
+                            { min: 20, max: 60, label: "21–60", "Recommended Dose": "260 mg q24h" },
+                            { min: 0, max: 20, label: "≤ 20", "Recommended Dose": "200 mg q24h" }
+                        ],
+                        hd: "260 mg q24h (dose after dialysis on dialysis days)",
+                        pd: "CAPD: 200 mg q24h",
+                        crrt: "No data",
+                        sled: "No data"
+                    }
+                }
+            },
+            {
+                id: "oseltamivir",
+                name: "Oseltamivir",
+                sources: {
+                    sanford: {
+                        title: "SANFORD Guide",
+                        reference: "SANFORD Guide (transcribed from the administrator-supplied reference document)",
+                        matching: "lowerExclusive",
+                        notes: "Usual dose for uncomplicated influenza of <48 hours duration. For complicated influenza (e.g., pneumonia) in immunocompromised patients, treatment may be extended to ≥10 days even when illness duration is >48 hours.",
+                        ranges: [
+                            { min: 60, max: 999, label: "> 60", "Treatment": "75 mg q12h × 5 days", "Prophylaxis": "75 mg q24h × 10 days" },
+                            { min: 30, max: 60, label: ">30–60", "Treatment": "30 mg q12h × 5 days", "Prophylaxis": "30 mg q24h × 10 days" },
+                            { min: 10, max: 30, label: ">10–30", "Treatment": "30 mg q24h × 5 days", "Prophylaxis": "30 mg q48h × 10 days" },
+                            { min: 0, max: 10, label: "≤10, no HD", "Treatment": "Not recommended", "Prophylaxis": "Not recommended" }
+                        ],
+                        hd: "Treatment: 30 mg × 1, then 30 mg after every HD cycle | Prophylaxis: 30 mg × 1, then 30 mg after alternate HD cycles",
+                        pd: "CAPD — Treatment: 30 mg × 1 | Prophylaxis: 30 mg × 1, then 30 mg weekly",
+                        crrt: "Not stated in the uploaded source",
+                        sled: "Not stated in the uploaded source"
+                    }
+                }
+            },
+            {
+                id: "norfloxacin",
+                name: "Norfloxacin",
+                sources: {
+                    sanford: {
+                        title: "SANFORD Guide",
+                        reference: "SANFORD Guide (transcribed from the administrator-supplied reference document)",
+                        matching: "lowerExclusive",
+                        notes: "The uploaded source does not state a non-hemodialysis regimen for CrCl <10 mL/min or an explicit regimen at exactly CrCl 50 mL/min; do not interpolate beyond the listed rows.",
+                        ranges: [
+                            { min: 50, max: 999, label: "> 50", "Recommended Dose": "400 mg q12h" },
+                            { min: 30, max: 49, label: "30–49", "Recommended Dose": "400 mg q12h" },
+                            { min: 10, max: 30, label: "10–30", "Recommended Dose": "400 mg q24h" }
+                        ],
+                        hd: "400 mg q24h",
+                        pd: "CAPD: 400 mg q24h",
+                        crrt: "Not applicable",
+                        sled: "No data"
+                    }
+                }
+            }
+        ];
+
+        let selectedAntibioticId = null;
+        let selectedRenalEquation = 'cg';
+
+        // Elements
+        const elSex = document.getElementById('sex');
+        const elAge = document.getElementById('age');
+        const elWeight = document.getElementById('weight');
+        const elHeight = document.getElementById('height');
+        const elScr = document.getElementById('scr');
+        const elHdCheckbox = document.getElementById('hdCheckbox');
+        
+        const elCrclResult = document.getElementById('crclResult');
+        const elCkdepiResult = document.getElementById('ckdepiResult');
+        const elDialysisBadge = document.getElementById('dialysisStatusBadge');
+        const elAntibioticGrid = document.getElementById('antibioticGrid');
+        const elDosingDisplayDeck = document.getElementById('dosingDisplayDeck');
+        const elAntibioticSearch = document.getElementById('antibioticSearch');
+        const elAntibioticSearchStatus = document.getElementById('antibioticSearchStatus');
+        const elAntibioticNoResults = document.getElementById('antibioticNoResults');
+        const FORMULARY_DRUG_IDS = ['meropenem', 'imipenem', 'piptazo', 'colistin', 'fosfomycin', 'levofloxacin', 'ciprofloxacin', 'cefixime', 'oseltamivir', 'norfloxacin'];
+        const FORMULARY_LABELS = {meropenem:'Meropenem', imipenem:'Imipenem/cilastatin', piptazo:'Piperacillin/tazobactam', colistin:'Colistin', fosfomycin:'Fosfomycin', levofloxacin:'Levofloxacin', ciprofloxacin:'Ciprofloxacin', cefixime:'Cefixime', oseltamivir:'Oseltamivir', norfloxacin:'Norfloxacin'};
+
+        // Modal 1 Elements (Beta-Lactams)
+        const betaLactamModal = document.getElementById('betaLactamModal');
+        const openBetaLactamModalBtn = document.getElementById('openBetaLactamModalBtn');
+        const closeBetaLactamModalBtn = document.getElementById('closeBetaLactamModalBtn');
+        const closeBetaLactamModalFooterBtn = document.getElementById('closeBetaLactamModalFooterBtn');
+
+        // Modal 2 Elements (Feedback)
+        const feedbackModal = document.getElementById('feedbackModal');
+        const openFeedbackModalBtn = document.getElementById('openFeedbackModalBtn');
+        const closeFeedbackModalBtn = document.getElementById('closeFeedbackModalBtn');
+        const cancelFeedbackBtn = document.getElementById('cancelFeedbackBtn');
+
+        // Modal Listeners
+        openBetaLactamModalBtn.onclick = () => betaLactamModal.classList.remove('hidden');
+        closeBetaLactamModalBtn.onclick = () => betaLactamModal.classList.add('hidden');
+        closeBetaLactamModalFooterBtn.onclick = () => betaLactamModal.classList.add('hidden');
+
+        openFeedbackModalBtn.onclick = () => feedbackModal.classList.remove('hidden');
+        closeFeedbackModalBtn.onclick = () => feedbackModal.classList.add('hidden');
+        cancelFeedbackBtn.onclick = () => feedbackModal.classList.add('hidden');
+
+        window.onclick = (e) => { 
+            if (e.target === betaLactamModal) betaLactamModal.classList.add('hidden'); 
+            if (e.target === feedbackModal) feedbackModal.classList.add('hidden');
+        };
+
+        // GOOGLE APPS SCRIPT SUBMISSION
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyBjbH3ihcruaFQaDBsAEDzHxRNHxZ06QIhMqaDz-S611QshIb_WdFki_aAdn3aXzxR/exec";
+
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('btnSubmitFeedback');
+            submitBtn.disabled = true;
+            submitBtn.innerText = "กำลังส่ง...";
+
+            const formData = {
+                usability: document.querySelector('input[name="usability"]:checked').value,
+                design: document.querySelector('input[name="design"]:checked').value,
+                content: document.querySelector('input[name="content"]:checked').value,
+                feedback: document.getElementById('feedbackText').value
+            };
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+            .then(() => {
+                alert("ขอบคุณสำหรับข้อเสนอแนะและการประเมินครับ/ค่ะ");
+                document.getElementById('feedbackForm').reset();
+                feedbackModal.classList.add('hidden');
+            })
+            .catch(error => {
+                alert("เกิดข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้ง");
+                console.error("Error:", error);
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "ส่งแบบประเมิน";
+            });
+        });
+
+        // Helper function for formatting CrCl ranges
+        function formatCrClLabel(range) {
+            if (range.label) return range.label;
+            if (range.isArcRow || range.min >= 130) {
+                return "&ge; 130";
+            }
+            if (range.min === 0) {
+                return "&lt; " + (range.max + 1);
+            }
+            return range.min + " to " + range.max;
+        }
+
+        // Render target setup for primary controls buttons interaction deck
+        function initGridButtons() {
+            const query = (elAntibioticSearch?.value || '').trim().toLocaleLowerCase('th-TH');
+            const visibleDrugs = FORMULARY_DRUG_IDS.map(id => antibioticDatabase.find(ab => ab.id === id)).filter(Boolean).filter(ab => (FORMULARY_LABELS[ab.id] || ab.name).toLocaleLowerCase('th-TH').includes(query));
+            elAntibioticGrid.innerHTML = "";
+            visibleDrugs.forEach(ab => {
+                const btn = document.createElement('button');
+                btn.id = `btn-${ab.id}`;
+                btn.className = "text-left p-2.5 border border-slate-200 rounded-lg text-xs font-semibold bg-slate-50 hover:bg-teal-50 hover:border-teal-300 transition-all cursor-pointer block truncate shadow-2xs";
+                btn.innerHTML = `<span class="text-slate-900 font-bold block">${FORMULARY_LABELS[ab.id] || ab.name}</span>`;
+                btn.onclick = () => selectAntibiotic(ab.id);
+                elAntibioticGrid.appendChild(btn);
+            });
+            elAntibioticSearchStatus.textContent = query ? `พบ ${visibleDrugs.length} จาก ${FORMULARY_DRUG_IDS.length} รายการ` : `แสดงยา ${FORMULARY_DRUG_IDS.length} รายการ`;
+            elAntibioticNoResults.classList.toggle('hidden', visibleDrugs.length !== 0);
+        }
+
+        // --- 2. RENAL BIOMETRICS MATHEMATICAL MATRIX ---
+        function runRenalCalculations() {
+            const sex = elSex.value;
+            const age = Number(elAge.value);
+            const abw = Number(elWeight.value);
+            const heightText = elHeight.value.trim();
+            const hasHeight = heightText !== '';
+            const height = Number(heightText);
+            const scr = Number(elScr.value);
+            const isHd = elHdCheckbox.checked;
+            const warning = document.getElementById('inputWarning');
+            const heightNote = document.getElementById('heightOptionalNote');
+            const bsaChoice = document.getElementById('bsaChoiceCard');
+            const bsaDetails = document.getElementById('bsaDetailsPanel');
+            const bodyWeightPanel = document.getElementById('bodyWeightPanel');
+            const valid = elAge.value.trim() !== '' && elWeight.value.trim() !== '' &&
+                elScr.value.trim() !== '' &&
+                Number.isFinite(age) && age >= 18 && age <= 120 &&
+                Number.isFinite(abw) && abw > 0 && abw <= 300 &&
+                (!hasHeight || (Number.isFinite(height) && height >= 100 && height <= 250)) &&
+                Number.isFinite(scr) && scr > 0 && scr <= 15;
+            if (!valid) {
+                warning.textContent = 'กรุณาระบุอายุผู้ใหญ่ 18–120 ปี น้ำหนัก 0–300 kg และ SCr มากกว่า 0 ถึง 15 mg/dL ให้ถูกต้อง; หากกรอกส่วนสูงต้องอยู่ระหว่าง 100–250 cm';
+                warning.classList.remove('hidden');
+                ['bmiResult','abwResult','ibwResult','adjbwResult','dosingWeightResult'].forEach(id => document.getElementById(id).textContent = '--');
+                document.getElementById('dosingWeightAdvice').textContent = 'ยังไม่สามารถเลือก Dosing Weight ได้';
+                elCrclResult.textContent = '--';
+                elCkdepiResult.textContent = '--';
+                document.getElementById('bsaResult').textContent = '--';
+                document.getElementById('bsaEgfrResult').textContent = '--';
+                document.getElementById('renalComparisonStatus').textContent = 'กรุณากรอกข้อมูลเพื่อเปรียบเทียบผลจากทั้งสองสูตร';
+                elDialysisBadge.classList.toggle('hidden', !isHd);
+                return { crcl: null, egfr: null, isHd, valid: false };
+            }
+            warning.classList.add('hidden');
+            heightNote.classList.toggle('hidden', hasHeight);
+            bsaChoice.classList.toggle('hidden', !hasHeight);
+            bsaDetails.classList.toggle('hidden', !hasHeight);
+            bodyWeightPanel.classList.toggle('hidden', !hasHeight);
+            if (!hasHeight && selectedRenalEquation === 'bsa') selectedRenalEquation = 'cg';
+            document.querySelector('input[name="renalEquation"][value="bsa"]').disabled = !hasHeight || isHd;
+            document.querySelector('input[name="renalEquation"][value="cg"]').checked = selectedRenalEquation === 'cg';
+            const bmi = hasHeight ? abw / Math.pow(height / 100, 2) : null;
+            const inchesOver60 = hasHeight ? height / 2.54 - 60 : null;
+            const ibw = hasHeight ? (sex === 'female' ? 45.5 : 50) + 2.3 * inchesOver60 : null;
+            const adjbw = hasHeight ? ibw + 0.4 * (abw - ibw) : null;
+            const weightKind = !hasHeight ? 'ABW' : bmi < 18.5 ? 'ABW' : bmi < 25 ? 'IBW' : 'AdjBW';
+            const dosingWeight = weightKind === 'ABW' ? abw : weightKind === 'IBW' ? ibw : adjbw;
+            const category = !hasHeight ? 'Height unavailable' : bmi < 18.5 ? 'Underweight' : bmi < 25 ? 'Normal weight' : bmi < 30 ? 'Overweight' : 'Obesity';
+            const reasoning = !hasHeight ? 'ไม่ได้กรอกส่วนสูง: ใช้น้ำหนักจริง (ABW) เพื่อคำนวณ Cockcroft–Gault' : bmi < 18.5 ? 'BMI < 18.5: ใช้น้ำหนักจริง (ABW)' :
+                bmi < 25 ? 'BMI 18.5–<25: ใช้น้ำหนักอุดมคติ (IBW)' : bmi < 30 ? 'BMI 25–<30: ใช้น้ำหนักปรับแก้ (AdjBW)' : 'BMI ≥ 30: ใช้น้ำหนักปรับแก้ (AdjBW)';
+            const show = (n) => n.toFixed(1);
+            document.getElementById('bmiResult').textContent = hasHeight ? show(bmi) : '--';
+            document.getElementById('abwResult').textContent = show(abw);
+            document.getElementById('ibwResult').textContent = hasHeight ? show(ibw) : '--';
+            document.getElementById('adjbwResult').textContent = hasHeight ? show(adjbw) : '--';
+            document.getElementById('dosingWeightResult').textContent = `${weightKind} = ${show(dosingWeight)} kg`;
+            document.getElementById('dosingWeightAdvice').textContent = `${category} — ${reasoning}`;
+            // Cockcroft–Gault using selected body weight (mL/min).
+            const crcl = ((140 - age) * dosingWeight / (72 * scr)) * (sex === 'female' ? 0.85 : 1);
+            // CKD-EPI 2021 creatinine equation (race-free, indexed to 1.73 m²).
+            const kappa = sex === 'female' ? 0.7 : 0.9;
+            const alpha = sex === 'female' ? -0.241 : -0.302;
+            const ratio = scr / kappa;
+            const egfr = 142 * Math.pow(Math.min(ratio, 1), alpha) *
+                Math.pow(Math.max(ratio, 1), -1.2) * Math.pow(0.9938, age) *
+                (sex === 'female' ? 1.012 : 1);
+            const bsa = hasHeight ? 0.007184 * Math.pow(abw, 0.425) * Math.pow(height, 0.725) : null;
+            const bsaEgfr = hasHeight ? egfr * bsa / 1.73 : null;
+            const finalBsaEgfr = hasHeight ? Math.round(bsaEgfr) : null;
+            const finalCrcl = Math.round(crcl);
+            const finalEgfr = Math.round(egfr);
+            elCrclResult.textContent = isHd ? 'HD' : finalCrcl;
+            elCkdepiResult.textContent = hasHeight ? (isHd ? 'HD' : finalEgfr) : '--';
+            document.getElementById('bsaResult').textContent = hasHeight ? bsa.toFixed(2) : '--';
+            document.getElementById('bsaEgfrResult').textContent = hasHeight ? (isHd ? 'HD' : finalBsaEgfr) : '--';
+            document.getElementById('renalComparisonStatus').textContent = isHd ?
+                'กำลังใช้คำแนะนำ Hemodialysis โดยไม่อิงผลจากสูตรประมาณการทำงานของไต' :
+                hasHeight ? `ผลต่างระหว่างสูตร: ${Math.abs(finalCrcl - finalBsaEgfr)} mL/min · เลือก ${selectedRenalEquation === 'cg' ? 'Cockcroft–Gault' : 'BSA-adjusted CKD-EPI 2021'} เพื่อจัดกลุ่มขนาดยา` :
+                'ไม่ได้กรอกส่วนสูง: ใช้ Cockcroft–Gault เป็นค่าประเมินเดียวสำหรับจัดกลุ่มขนาดยา';
+            document.querySelector('input[name="renalEquation"][value="cg"]').disabled = isHd;
+            elDialysisBadge.classList.toggle('hidden', !isHd);
+            return { crcl: finalCrcl, egfr: finalEgfr, bsaEgfr: finalBsaEgfr, bsa, isHd, valid: true, bmi, abw, ibw, adjbw, dosingWeight, weightKind, rawCrcl: crcl, rawBsaEgfr: bsaEgfr };
+        }
+
+
+        // ARC and ARCTIC screening based on Chen & Nicolau (2020).
+        // Risk scores are screening tools, not estimates of measured renal clearance.
+        function assessArcRisk() {
+            const age = Number(elAge.value), scr = Number(elScr.value);
+            const basicValid = elAge.value.trim() !== '' && elScr.value.trim() !== '' &&
+                Number.isFinite(age) && age >= 18 && age <= 120 && Number.isFinite(scr) && scr > 0;
+            const trauma = document.getElementById('arcTrauma').checked;
+            const sofaInput = document.getElementById('arcSofa');
+            const sofa = Number(sofaInput.value);
+            const sofaValid = sofaInput.value.trim() !== '' && Number.isInteger(sofa) && sofa >= 0 && sofa <= 24;
+            const scoreEl = document.getElementById('arcScoreResult');
+            const statusEl = document.getElementById('arcScoreStatus');
+            const arcticEl = document.getElementById('arcticScoreResult');
+            const arcticStatus = document.getElementById('arcticScoreStatus');
+            const alertEl = document.getElementById('arcAlert');
+            let highRisk = false;
+            if (!basicValid) {
+                scoreEl.textContent = '-- / 10'; statusEl.textContent = 'กรุณาระบุอายุผู้ใหญ่ (≥18 ปี) และ SCr ที่ถูกต้อง';
+                arcticEl.textContent = '-- / 9'; arcticStatus.textContent = 'ข้อมูลผู้ป่วยยังไม่ครบ';
+            } else {
+                if (sofaValid) {
+                    const score = (age <= 50 ? 6 : 0) + (trauma ? 3 : 0) + (sofa <= 4 ? 1 : 0);
+                    scoreEl.textContent = score + ' / 10';
+                    statusEl.textContent = score >= 7 ? 'ความเสี่ยงสูง (High risk)' : 'ความเสี่ยงต่ำ (Low risk)';
+                    highRisk = score >= 7;
+                } else {
+                    scoreEl.textContent = '-- / 10';
+                    statusEl.textContent = sofaInput.value.trim() === '' ? 'กรอก SOFA เพื่อคำนวณคะแนนครบทุกข้อ' : 'SOFA ต้องเป็นจำนวนเต็ม 0–24';
+                }
+                if (trauma) {
+                    const scrUmol = scr * 88.4;
+                    const arctic = (scrUmol < 62 ? 3 : 0) + (elSex.value === 'male' ? 2 : 0) + (age <= 56 ? 4 : age <= 75 ? 3 : 0);
+                    arcticEl.textContent = arctic + ' / 9';
+                    arcticStatus.textContent = arctic >= 6 ? 'ความเสี่ยงสูง (≥6 ตามบทความ)' : 'ความเสี่ยงต่ำ (<6)';
+                    highRisk = highRisk || arctic >= 6;
+                } else {
+                    arcticEl.textContent = '-- / 9'; arcticStatus.textContent = 'ใช้เฉพาะผู้ป่วย Trauma ICU';
+                }
+            }
+            const isHd = elHdCheckbox.checked;
+            alertEl.className = 'rounded-lg border p-3 text-sm ' + (isHd ? 'bg-slate-100 border-slate-300 text-slate-700' : highRisk ? 'bg-amber-50 border-amber-300 text-amber-950' : 'bg-slate-50 border-slate-200 text-slate-700');
+            alertEl.textContent = isHd ? 'ผู้ป่วย Maintenance HD: การคัดกรอง ARC ไม่เหมาะสำหรับใช้ชี้นำการปรับขนาดยาในโหมดนี้' :
+                highRisk ? '⚠️ พบความเสี่ยง ARC สูง: พิจารณาวัด timed urine CrCl, ทบทวน antibiotic exposure, MIC, PK/PD และใช้ TDM เมื่อเหมาะสม ห้ามปรับขนาดยาอัตโนมัติจากคะแนนคัดกรอง' :
+                'คะแนนคัดกรองไม่สามารถยืนยันหรือปฏิเสธ ARC ได้; หากสงสัยทางคลินิกควรตรวจ measured CrCl';
+            return { highRisk: highRisk && !isHd, valid: basicValid };
+        }
+
+        function selectAntibiotic(id) {
+            selectedAntibioticId = id;
+            antibioticDatabase.forEach(ab => {
+                const btn = document.getElementById(`btn-${ab.id}`);
+                if (!btn) return;
+                if (ab.id === id) {
+                    btn.className = "text-left p-2.5 border-2 border-teal-600 rounded-lg text-xs font-bold bg-teal-50 shadow-sm block truncate text-teal-950 ring-1 ring-teal-600/20";
+                } else {
+                    btn.className = "text-left p-2.5 border border-slate-200 rounded-lg text-xs font-semibold bg-slate-50 hover:bg-teal-50 hover:border-teal-300 transition-all cursor-pointer block truncate shadow-2xs";
+                }
+            });
+            renderDosingCards();
+        }
+
+        // --- 3. RENDERING SUITE & DYNAMIC DOSING CARD CREATOR ---
+
+        function renderFosfomycinSummary() {
+            const rows = [
+                ['MIC 32 mcg/mL<br><span class="text-xs">(8 g/day)</span>', 'CrCl ≥80: 4 g q12h<br>CrCl 50–79: 3 g q12h<br>CrCl 30–49: 2 g q12h<br>CrCl 15–29: 3 g q24h<br>CrCl ≤14: 2 g q24h', '2 g q48h'],
+                ['MIC 64 mcg/mL<br><span class="text-xs">(16 g/day)</span>', 'CrCl ≥80: 4 g q6h<br>CrCl 50–79: 4 g q8h<br>CrCl 30–49: 4 g q12h<br>CrCl 15–29: 3 g q12h<br>CrCl ≤14: 4 g q24h', '4 g q48h'],
+                ['MIC >64 mcg/mL<br><span class="text-xs">(24 g/day)</span>', 'CrCl ≥80: 4 g q4h<br>CrCl 50–79: 4 g q6h<br>CrCl 30–49: 4 g q8h<br>CrCl 15–29: 4 g q12h<br>CrCl ≤14: 4 g q24h', '4 g q48h']
+            ];
+            return `<section class="fos-summary" aria-labelledby="fos-summary-title"><header><span class="fos-tag">IV FOSFOMYCIN • RECOMMENDED DOSING</span><h3 id="fos-summary-title">สรุปขนาดยาที่แนะนำ</h3><p>Fosfomycin: ขนาดยาขึ้นกับ MIC • Drip 4 h เพื่อลดการเกิด hypernatremia</p></header><div class="fos-scroll"><table><thead><tr><th scope="col">MIC<br><span class="text-xs font-normal">(ขนาดยารวมต่อวัน)</span></th><th scope="col">CrCl</th><th scope="col">Hemodialysis</th></tr></thead><tbody>${rows.map(row => `<tr><th scope="row">${row[0]}</th><td>${row[1]}</td><td>${row[2]}</td></tr>`).join('')}</tbody></table></div><footer><strong>Reference:</strong> หน่วยโรคติดเชื้อ ภาควิชาอายุรศาสตร์ คณะแพทยศาสตร์, คณะเภสัชศาสตร์ มหาวิทยาลัยธรรมศาสตร์ และกลุ่มงานเภสัชกรรม รพ.ธรรมศาสตร์เฉลิมพระเกียรติ</footer></section>`;
+        }
+
+        function renderFosfomycinComparison(metrics) {
+            const table = (heads, rows) => `<div class="fos-scroll"><table><thead><tr>${heads.map(h=>`<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((c,i)=>i===0?`<th scope="row">${c}</th>`:`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+            const link = (url,label) => `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+            return `<section id="fos-three-source" class="fos-panel" aria-labelledby="fos-title">
+            <header><span class="fos-tag">IV FOSFOMYCIN • SOURCE COMPARISON</span><h3 id="fos-title">เปรียบเทียบขนาดยา 3 แหล่ง</h3><p>ตารางอ้างอิงสำหรับผู้ใหญ่ • อ่าน renal metric, MIC และ RRT ของแต่ละแหล่งก่อนเลือกขนาดยา</p></header>
+            <div class="fos-caution"><strong>ห้ามนำช่วง cutoff ข้ามสมการโดยตรง</strong><p>FDA: eCrCl (Cockcroft–Gault), EMA: CrCl — หน่วย mL/min; Götz: eGFR MDRD — หน่วย mL/min/1.73 m² (indexed). แม้หน่วยเหมือนกัน CKD-EPI ก็ไม่ใช่ CG หรือ MDRD; การปรับ BSA เปลี่ยนหน่วยแต่ไม่ได้เปลี่ยนสมการให้เป็น MDRD.</p><p>ตัวเลือก CG / BSA-adjusted CKD-EPI ของแอปยังควบคุมตารางเดิม ส่วนเปรียบเทียบนี้แสดงข้อมูลครบทุกแหล่งและไม่จับคู่ขนาดยาอัตโนมัติ เพื่อไม่ใช้ CKD-EPI แทน MDRD หรือสร้าง cutoff เพิ่มเอง.</p></div>
+            <div class="fos-context">${metrics.isHd ? 'สถานะจากแอป: Maintenance HD — ใช้ข้อกำหนด HD เฉพาะแหล่ง; ห้ามใช้แถว no RRT หรือถือว่า HD เท่ากับ CRRT/PIRRT' : `CG จากแอป: ${metrics.rawCrcl.toFixed(2)} mL/min (ใช้น้ำหนักตาม Dosing Weight เดิม). แสดงเพื่อประกอบการอ่าน FDA/EMA เท่านั้น; แอปเดิมไม่มีค่า MDRD จึงไม่ใช้ค่า CKD-EPI ไปเลือกแถว Götz.`}</div>
+            <div class="fos-pair">
+            <article class="fos-card"><h4>FDA / CONTEPO</h4><p class="fos-metric">eCrCl • Cockcroft–Gault • mL/min</p><p>ข้อบ่งใช้: อายุ ≥18 ปี, cUTI รวม acute pyelonephritis จากเชื้อ E. coli / K. pneumoniae ที่ไวต่อยา. ให้ IV infusion 1 ชั่วโมงทุกขนาดยา; ระยะรักษาไม่เกิน 14 วันตามอาการ.</p>
+            ${table(['eCrCl (mL/min)','Loading / first dose','Maintenance'],[['>50','6 g (first dose)','6 g q8h'],['41–50','6 g','4 g q8h'],['31–40','6 g','3 g q8h'],['21–30','6 g','5 g q24h'],['11–20','6 g','3 g q24h'],['≤10','ไม่ระบุในตารางฉลาก','ไม่มี regimen จากตารางนี้']])}
+            <p><strong>HD:</strong> ให้ยาหลังจบ HD ในวันที่ฟอกเลือด (HD กำจัดยา 60–80%); ฉลากไม่ได้กำหนด fixed HD regimen แยกไว้ จึงไม่อนุมานเป็น 2 g แบบ EMA.</p>
+            
+            <footer>Reference: ${link('https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/212271s000lbl.pdf','FDA CONTEPO prescribing information (10/2025), §§2.1–2.2, Table 1')}.</footer></article>
+            <article class="fos-card"><h4>EMA / European product information</h4><p class="fos-metric">CrCl • mL/min • อ้างอิง Cockcroft–Gault</p><p>CrCl ≥80: 12–24 g/day แบ่ง 2–3 ครั้งตามตำแหน่ง/ความรุนแรงของการติดเชื้อ; ≤8 g/dose. CrCl 40–80: โดยทั่วไปไม่ต้องปรับ แต่ระวังการใช้ขนาดสูง.</p><p><strong>Loading ในการปรับยาตามไต:</strong> เพิ่มขนาดยาครั้งแรก 100% (2 เท่าของขนาดต่อครั้งที่ปรับแล้ว), ไม่เกิน 8 g.</p>
+            ${table(['CrCl จุดอ้างอิง','CrCl patient / normal','Maintenance (% daily dose ปกติ)'],[['40 mL/min','0.333','70% แบ่ง 2–3 ครั้ง'],['30 mL/min','0.250','60% แบ่ง 2–3 ครั้ง'],['20 mL/min','0.167','40% แบ่ง 2–3 ครั้ง'],['10 mL/min','0.083','20% แบ่ง 1–2 ครั้ง']])}
+            <div class="fos-context"><strong>CrCl patient / CrCl normal ใช้เพื่ออะไร?</strong><p>เป็นอัตราส่วนที่ไม่มีหน่วย ใช้แสดง CrCl ของผู้ป่วยเทียบกับค่าปกติอ้างอิงในตาราง เนื่องจาก fosfomycin ถูกกำจัดทางไต การทำงานของไตที่ลดลงจึงมีผลต่อการกำจัดยา. จากตัวเลขในตารางอนุมานได้ว่าใช้ CrCl normal ประมาณ 120 mL/min เช่น CrCl 30 → 30/120 = 0.250 (25% ของค่าอ้างอิง).</p><p><strong>อัตราส่วนนี้ไม่ใช่ตัวคูณขนาดยาโดยตรง และผู้ใช้ไม่จำเป็นต้องคำนวณอัตราส่วนเพื่อเลือกแถว</strong> ให้ดู CrCl patient แล้วใช้เปอร์เซ็นต์ในคอลัมน์ Maintenance ตาม SmPC: เช่น CrCl 30 มีอัตราส่วน 0.250 แต่แนะนำ maintenance 60% ของขนาดรวมต่อวันเมื่อไตปกติ ไม่ใช่ 25%. หากขนาดอ้างอิงที่เหมาะกับข้อบ่งใช้คือ 12 g/day จะได้ 12 × 0.60 = 7.2 g/day ก่อนแบ่งให้ตามตาราง (ตัวอย่างการคำนวณ ไม่ใช่คำสั่งใช้ยาเฉพาะราย).</p><p>คงคอลัมน์อัตราส่วนไว้เพื่ออธิบายตารางต้นฉบับ; SmPC ไม่ได้ให้สูตรสำหรับนำอัตราส่วนไปคำนวณเปอร์เซ็นต์ขนาดยาอื่นเอง. อ้างอิง: Fomicyt SmPC §4.2, Table 2.</p></div><p>เปอร์เซ็นต์คิดจาก <strong>ขนาดรวมต่อวันที่เหมาะกับข้อบ่งใช้หากไตปกติ</strong> ไม่ใช่จาก 24 g/day ทุกกรณี. ตารางให้จุดอ้างอิง ไม่ได้ให้ช่วงต่อเนื่อง; ไม่ interpolate หรือขยาย cutoff เอง. เอกสารระบุ 40–80 ไม่ปรับ แต่มีแถว 40 →70% ด้วย: ที่ขอบเขต 40 ให้ตรวจสอบ product information/ปรึกษาเภสัชกรก่อนเลือก.</p>
+            <p><strong>Chronic intermittent HD ทุก 48 h:</strong> 2 g หลังจบแต่ละครั้ง. <strong>Post-dilution CVVHF:</strong> เอกสารระบุไม่ต้องปรับ; ห้ามขยายคำแนะนำนี้ไปทุก CRRT modality หรือทุก setting.</p>
+            <footer>References: ${link('https://www.ema.europa.eu/en/documents/referral/fosfomycin-article-31-referral-annex-iii_en.pdf','EMA Article 31 Annex III, §4.2')}; ${link('https://www.medicines.org.uk/emc/product/100356/smpc','Fomicyt SmPC §4.2, Table 2 (review ref. 60)')}.</footer></article></div>
+            <article class="fos-card"><h4>Götz et al. • population PK model</h4><p class="fos-metric">eGFR MDRD • mL/min/1.73 m² • ตารางแยก MIC และ RRT</p><p>ถอดจาก <strong>Table 2 ของ Koulenti &amp; Timsit 2026</strong> (ไม่ใช่ Table 2 ของงาน Götz). ขนาดยาเป็นต่อครั้ง; q8h = ทุก 8 ชั่วโมง. ช่อง N/A = ไม่มี regimen ที่รายงานในตารางสำหรับเงื่อนไขนั้น ไม่ใช่ข้อห้ามใช้ยา.</p>
+            ${table(['eGFR MDRD (mL/min/1.73 m²)','MIC 32 • CRRT/PIRRT','MIC 32 • no CRRT/PIRRT','MIC 64 • CRRT/PIRRT','MIC 64 • no CRRT/PIRRT'],[['91–120','ไม่แสดงช่วงนี้','8 g q8h ±','ไม่แสดงช่วงนี้','N/A'],['61–90','8 g q8h','8 g q8h','N/A','N/A'],['31–60','8 g q8h','5 g q8h','N/A','8 g q8h ±'],['≤30 (anuria ดูแถวแยก)','5 g q8h','4 g q8h','8 g q8h ±','8 g q8h'],['0 (anuria)','4 g q8h','ไม่แสดง anuria แยก','8 g q8h','ไม่แสดง anuria แยก']])}
+            <p><strong>PTA:</strong> ขนาดต่ำสุดที่ได้ PTA ≥90% สำหรับ bactericidal target; <strong>± หมายถึง PTA ≥80%</strong> ไม่ใช่ขนาดยาบวกลบ. ไม่เติมข้อมูลในช่องว่างและไม่ขยายคำแนะนำเกินช่วงที่รายงาน.</p><p><strong>RRT settings ในเชิงอรรถ:</strong> CRRT dialysate flow 42 mL/min; PIRRT 250 mL/min. ขนาดยาขึ้นกับ modality, flow, residual renal function และเวลาที่ให้ยาสัมพันธ์กับ RRT; ไม่ใช้แทน chronic intermittent HD. Anuria ต้องประเมินจริง ไม่ใช้ eGFR ต่ำเพียงอย่างเดียวแทน.</p><p>เป็นข้อเสนอจาก PK simulation ไม่ใช่ฉลากยาหรือการยืนยันผลรักษา. MIC 64 mg/L มี N/A และบาง regimen ได้เพียง PTA ≥80%; ห้ามตีความว่าครอบคลุมเชื้อแน่นอน. Table 2 กับข้อความบรรยายใน review มีความไม่สอดคล้องบางจุด ให้ยึดตารางที่ระบุพร้อมตรวจงานต้นฉบับก่อนใช้.</p>
+            <footer>References: ${link('https://doi.org/10.3390/antibiotics15030234','Koulenti D, Timsit JF. Antibiotics. 2026;15:234, Table 2, p.7')}; ${link('https://doi.org/10.1128/aac.01779-24','Götz KM et al. Antimicrob Agents Chemother. 2025;69:e01779-24')}. Review ใส่เลขอ้างอิง Götz ในตารางเป็น [56] แต่บรรณานุกรมจริงเป็น [58]; ระบุชื่อและ DOI ที่ถูกต้องแทน.</footer></article>
+            <div class="fos-caution"><strong>Clinical caveats</strong><p>ประเมิน MIC, ตำแหน่งติดเชื้อ, ยาร่วม และความเสี่ยงดื้อยาเป็นรายกรณี. Renal estimates อาจไม่น่าเชื่อถือใน AKI/SCr เปลี่ยนเร็ว; ประเมินซ้ำและพิจารณา measured clearance/TDM หากเข้าถึงได้. ติดตาม Na, K, electrolytes และภาวะน้ำเกิน; ปริมาณ sodium ต่างตามผลิตภัณฑ์ (CONTEPO 1,980 mg/6 g). ข้อมูลความปลอดภัยขนาดสูงจำกัด. ขนาดยา oral fosfomycin ใช้แทนตาราง IV นี้ไม่ได้.</p></div>
+            </section>`;
+        }
+
+        function renderDosingCards() {
+            if (!selectedAntibioticId) return;
+            
+            const currentMetrics = runRenalCalculations();
+            const ab = antibioticDatabase.find(item => item.id === selectedAntibioticId);
+            if (ab.id === 'fosfomycin' && currentMetrics.valid) {
+                // Preserve all other drugs' existing categorization; fosfomycin uses unrounded estimates.
+                currentMetrics.crcl = currentMetrics.rawCrcl;
+                currentMetrics.bsaEgfr = currentMetrics.rawBsaEgfr;
+            }
+            const activeRenalValue = selectedRenalEquation === 'bsa' ? currentMetrics.bsaEgfr : currentMetrics.crcl;
+            const activeRenalLabel = selectedRenalEquation === 'bsa' ? 'BSA-adjusted CKD-EPI 2021' : 'Cockcroft–Gault';
+            if (!currentMetrics.valid) {
+                elDosingDisplayDeck.innerHTML = '<div class="bg-rose-50 border border-rose-200 p-5 rounded-xl text-rose-800 font-semibold">กรุณากรอกข้อมูลผู้ป่วยให้ถูกต้องก่อนแสดงคำแนะนำขนาดยา</div>';
+                return;
+            }
+            
+            let html = `
+                <div class="bg-white p-5 rounded-xl shadow-xs border border-slate-200 space-y-4">
+                    <div class="flex justify-between items-start pb-3 border-b border-slate-100">
+                        <div>
+                            <span class="text-xs font-bold text-teal-600 tracking-wider uppercase">Active Drug Guidance</span>
+                            <h3 class="text-lg font-bold text-slate-900">${ab.name}</h3>
+                        </div>
+                        <div class="text-right text-xs text-slate-500">
+                            Current Renal Parameter: <span class="font-bold text-slate-800">${currentMetrics.isHd ? 'Hemodialysis Override' : activeRenalLabel + ': ' + (ab.id === 'fosfomycin' ? activeRenalValue.toFixed(2) : activeRenalValue) + ' mL/min'}</span>
+                        </div>
+                    </div>
+            `;
+
+            const arcScreen = assessArcRisk();
+            if (arcScreen.highRisk && !currentMetrics.isHd) {
+                html += `<div class="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950"><strong>⚠️ ARC screening: High risk</strong><p class="mt-1">การจัดกลุ่มขนาดยาด้านล่างยังอิงสูตรการทำงานของไตที่เลือก ไม่ได้ถูกเพิ่มขนาดยาอัตโนมัติ ควรประเมิน measured CrCl, MIC, infection severity, PK/PD target, การใช้ prolonged infusion และ TDM ตามความเหมาะสม</p></div>`;
+            }
+            if (ab.id === 'fosfomycin') {
+                html += renderFosfomycinSummary();
+                html += `<section class="fos-thai-studies" aria-labelledby="thai-fos-title"><header><span class="fos-tag">IV FOSFOMYCIN • THAI STUDIES</span><h3 id="thai-fos-title">ขนาดยาจากการศึกษาในไทย</h3><p>ตารางเดิมจาก Leelawattanachai et al. 2020 และ Wangchinda et al. 2024 • คงกลไกเปรียบเทียบ CG / BSA-adjusted CKD-EPI เดิม</p></header><div class="rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950 space-y-2"><strong>Fosfomycin IV: ข้อจำกัดและการติดตาม</strong><p>สองตารางมีเป้าหมาย PK/PD ต่างกัน จึงไม่ควรถือว่าขนาดยาที่ต่างกันใช้แทนกันได้โดยตรง. Table 3 ปี 2024 ไม่รับประกันผลการรักษาหรือสนับสนุน monotherapy ในทุกเชื้อ.</p><p><em>K. pneumoniae</em>: ใช้ AUC24/MIC 98.9 ที่อนุมานจาก <em>E. coli</em>; CFR เพียง 72.9% ที่ 5 g q8h สำหรับ CG 91–120 mL/min. <em>P. aeruginosa</em>: ใช้เป้าหมายแยก AUC24/MIC 40.8 และ CFR 76.7% ที่ขนาดเดียวกัน; อาจต้องขนาดสูงกว่า แต่ข้อมูลความปลอดภัยจำกัด โดยเฉพาะ >18 g/day. ควรพิจารณา MIC และการใช้ร่วมกับยาที่ออกฤทธิ์อื่นเป็นรายกรณี.</p><p>ติดตาม Na, K และสมดุลน้ำก่อนเริ่มและระหว่างรักษา: เสี่ยง hypernatraemia, hypokalaemia และ sodium/fluid overload โดยเฉพาะไตบกพร่องหรือหัวใจล้มเหลว. IV fosfomycin มี sodium ประมาณ 320 mg ต่อยา 1 g (ตรวจสอบผลิตภัณฑ์ที่ใช้).</p><p class="text-xs">หมายเหตุช่วงทศนิยม: ตารางเดิมใช้ขอบเขต &lt;15, &lt;30, &lt;50, &lt;80; ตารางใหม่จัดค่าที่ >30–≤60, >60–≤90 ฯลฯ เข้ากลุ่มถัดไปโดยไม่ปัดค่า เพื่อไม่ให้เกิดช่องว่างระหว่างช่วง. >180 ไม่มีขนาดยาใหม่จากงานศึกษา.</p><p class="text-xs">อ้างอิง: Wangchinda et al. 2024, Tables 3–4 และ Discussion; Leelawattanachai et al. 2020, Table 2 (ลิงก์แยกใต้แต่ละตาราง)</p></div>`;
+            }
+            Object.keys(ab.sources).forEach(srcKey => {
+                const src = ab.sources[srcKey];
+                
+                html += `
+                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+                        <div class="flex justify-between items-center bg-slate-200/60 px-3 py-1.5 rounded-md">
+                            <span class="text-xs font-bold text-slate-700">📋 Reference Source: ${src.title}</span>
+                            <span class="text-[10px] bg-teal-600 text-white font-semibold px-2 py-0.5 rounded-sm uppercase">${ab.id === 'fosfomycin' ? 'Dosing comparison' : 'Guideline Match'}</span>
+                        </div>
+                `;
+
+                if (src.notes) {
+                    html += `<p class="text-xs text-slate-600 bg-white p-2 rounded-md border border-slate-100 italic"><strong>Clinical Notes:</strong> ${src.notes}</p>`;
+                }
+
+                if (currentMetrics.isHd) {
+                    const rrtCards = [
+                        ['Thrice-Weekly Hemodialysis Dosing', src.hd],
+                        ['Peritoneal Dialysis Reference', src.pd],
+                        ['CRRT Reference', src.crrt],
+                        ['SLED Reference', src.sled]
+                    ].filter(([, value]) => value);
+                    html += `
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-2">
+                            ${rrtCards.map(([label, value], index) => `
+                                <div class="p-3 rounded-lg ${index === 0 ? 'bg-amber-50 border-amber-200' : 'bg-slate-100 border-slate-200'} border">
+                                    <span class="block text-[10px] font-bold ${index === 0 ? 'text-amber-800' : 'text-slate-500'} uppercase tracking-wide">${label}</span>
+                                    <span class="block text-sm ${index === 0 ? 'font-bold text-amber-950' : 'font-medium text-slate-800'} mt-1">${value}</span>
+                                </div>`).join('')}
+                        </div>
+                    `;
+                } else {
+                    const matchRow = value => src.ranges.find(r => {
+                        if (src.matching === 'upperExclusive') return value >= r.min && value < r.max;
+                        if (src.matching === 'lowerExclusive') return (r.min === 0 ? value >= 0 : value > r.min) && value <= r.max;
+                        return value >= r.min && value <= r.max;
+                    }) || null;
+                    const cgRow = matchRow(currentMetrics.crcl);
+                    const hasBsaEstimate = Number.isFinite(currentMetrics.bsaEgfr);
+                    const bsaRow = hasBsaEstimate ? matchRow(currentMetrics.bsaEgfr) : null;
+                    if (!hasBsaEstimate) {
+                        html += `<p class="text-sm text-sky-800 bg-sky-50 rounded-lg p-2">Cockcroft–Gault เป็นค่าประเมินเดียว เนื่องจากไม่ได้กรอกส่วนสูง จึงยังไม่แสดงการเปรียบเทียบ BSA-adjusted CKD-EPI</p>`;
+                    } else if (cgRow !== bsaRow) {
+                        html += `<div class="bg-amber-50 text-amber-950 border border-amber-300 rounded-lg p-3 text-sm font-semibold">⚠️ ผลต่างของกลุ่มขนาดยา (${src.title}): Cockcroft–Gault ${ab.id === 'fosfomycin' ? currentMetrics.crcl.toFixed(2) : currentMetrics.crcl} mL/min → ${cgRow ? formatCrClLabel(cgRow) : 'ไม่มีช่วงข้อมูล'}; BSA-adjusted CKD-EPI ${ab.id === 'fosfomycin' ? currentMetrics.bsaEgfr.toFixed(2) : currentMetrics.bsaEgfr} mL/min → ${bsaRow ? formatCrClLabel(bsaRow) : 'ไม่มีช่วงข้อมูล'}. หากทั้งสองสูตรจัดกลุ่มขนาดยาต่างกัน ให้ประเมินเป็นรายกรณี โดยพิจารณาขนาดยาตามตาราง, ความรุนแรงของการติดเชื้อ, MIC และความเสี่ยง toxicity</div>`;
+                    } else if (ab.id === 'fosfomycin' && !cgRow && !bsaRow) {
+                        html += `<p class="text-sm text-rose-800 bg-rose-50 rounded-lg p-2">ทั้งสองสูตรอยู่นอกช่วงข้อมูลของแหล่งอ้างอิงนี้ ไม่มีขนาดยาแนะนำจากตารางนี้</p>`;
+                    } else {
+                        html += `<p class="text-sm text-teal-800 bg-teal-50 rounded-lg p-2">✓ ทั้งสองสูตรอยู่ในช่วงคำแนะนำขนาดยาเดียวกันสำหรับแหล่งอ้างอิงนี้</p>`;
+                    }
+                    const activeMatchedRow = matchRow(activeRenalValue);
+
+                    if (activeMatchedRow) {
+                        html += `<div class="bg-teal-800 text-white p-3.5 rounded-lg space-y-2 shadow-xs">`;
+                        html += `<span class="block text-[10px] font-bold text-teal-200 uppercase tracking-wider">Matched Dosage Strategy (Renal function range: ${formatCrClLabel(activeMatchedRow)} mL/min)</span>`;
+                        
+                        Object.keys(activeMatchedRow).forEach(key => {
+                            if (key !== 'min' && key !== 'max' && key !== 'isArcRow' && key !== 'label') {
+                                html += `
+                                    <div class="flex justify-between items-start text-xs pt-1 border-t border-teal-700/60 first:border-0 first:pt-0">
+                                        <span class="text-teal-100 font-medium">${key}:</span>
+                                        <span class="font-bold tracking-wide text-right ml-2">${activeMatchedRow[key]}</span>
+                                    </div>`;
+                            }
+                        });
+                        html += `</div>`;
+                    } else if (srcKey === 'wangchinda2024' && activeRenalValue > 180) {
+                        html += `<p class="text-sm text-rose-800 font-semibold bg-rose-50 border border-rose-300 p-3 rounded-md">⚠️ >180 mL/min: ขนาดยาใหม่ไม่ได้ศึกษา/จำลองในช่วงนี้ ไม่มีขนาดยาแนะนำจาก Table 3 และไม่ใช้ 7 g q8h ต่อโดยอัตโนมัติ</p>`;
+                    } else {
+                        html += `<p class="text-xs text-rose-600 font-semibold bg-rose-50 p-2 rounded-md">⚠️ Warning: Patient clearance falls outside reference framework ranges.</p>`;
+                    }
+
+                    html += `
+                        <details class="group mt-2" open>
+                            <summary class="list-none flex items-center gap-1 text-[11px] font-bold text-teal-700 hover:text-teal-900 cursor-pointer select-none">
+                                <span class="group-open:rotate-90 transition-transform inline-block">▶</span> Full Renal Dosing Matrix Table
+                            </summary>
+                            <div class="overflow-x-auto mt-2 rounded-lg border border-slate-200 bg-white">
+                                <table class="w-full text-left border-collapse text-xs">
+                                    <thead>
+                                        <tr class="bg-slate-100 text-slate-600 font-bold border-b border-slate-200">
+                                            <th class="p-2 border-r border-slate-200">CrCl Range (mL/min)</th>
+                                            <th class="p-2">Recommended Dosing Regimen</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-100">
+                    `;
+                    
+                    src.ranges.forEach(r => {
+                        const isThisRowActive = (activeMatchedRow === r);
+                        html += `
+                            <tr class="${isThisRowActive ? 'bg-amber-50 font-semibold text-teal-950 border-y-2 border-amber-300' : 'text-slate-600'}">
+                                <td class="p-2 border-r border-slate-200 font-mono font-bold">${formatCrClLabel(r)}</td>
+                                <td class="p-2 text-[11px]">
+                        `;
+                        Object.keys(r).forEach(k => {
+                            if (k !== 'min' && k !== 'max' && k !== 'isArcRow' && k !== 'label') {
+                                html += `<div class="my-0.5"><span class="opacity-70 text-[10px] font-bold uppercase">${k}:</span> ${r[k]}</div>`;
+                            }
+                        });
+                        html += `</td></tr>`;
+                    });
+
+                    html += `
+                                    </tbody>
+                                </table>
+                            </div>
+                        </details>
+                    `;
+                }
+                if (src.reference) html += `<p class="text-sm text-slate-700 border-t border-slate-200 pt-3"><strong>อ้างอิงตารางนี้:</strong> ${src.reference}</p>`;
+                html += `</div>`;
+            });
+
+            if (ab.id === 'fosfomycin') {
+                html += `</section>`;
+                html += renderFosfomycinComparison(currentMetrics);
+            }
+            html += `</div>`; 
+            elDosingDisplayDeck.innerHTML = html;
+        }
+
+        // Interactive dose categorization from either unindexed renal estimate.
+        document.querySelectorAll('input[name="renalEquation"]').forEach(control => {
+            control.addEventListener('change', () => {
+                selectedRenalEquation = control.value;
+                runRenalCalculations();
+                assessArcRisk();
+                if (selectedAntibioticId) renderDosingCards();
+            });
+        });
+
+        // --- 4. ENGINE EVENTS INITIALIZATION BINDING ---
+        const activeTrackers = [elSex, elAge, elWeight, elHeight, elScr, elHdCheckbox];
+        activeTrackers.forEach(inputEl => {
+            inputEl.addEventListener('input', () => {
+                runRenalCalculations();
+                assessArcRisk();
+                if (selectedAntibioticId) renderDosingCards();
+            });
+        });
+
+        ['arcTrauma', 'arcSofa'].forEach(id => document.getElementById(id).addEventListener('input', () => {
+            assessArcRisk();
+            if (selectedAntibioticId) renderDosingCards();
+        }));
+
+        // --- 5. ANTIBIOTIC SPECTRUM SEARCH TOOL LOGIC ---
+        const SPECTRUM_BUNDLE = {"SPECTRUM_DATA":[{"key":"mssa","name":"MSSA (Methicillin-susceptible S. aureus)","aliases":["staphylococcus aureus (mssa)","s. aureus mssa","mssa"],"drugs":[{"name":"Nafcillin / Oxacillin / Cloxacillin","level":"excellent","class":"Anti-staphylococcal penicillin","note":"Drug of choice for serious MSSA infections"},{"name":"Cefazolin","level":"excellent","class":"1st-gen Cephalosporin","note":"Excellent alternative; preferred for many SSTIs"},{"name":"Amoxicillin/Clavulanate","level":"excellent","class":"Aminopenicillin + BLI","note":"Good for mixed skin infections"},{"name":"Piperacillin/Tazobactam","level":"excellent","class":"Extended-spectrum penicillin","note":"Broad coverage including MSSA"},{"name":"Ceftriaxone / Cefepime","level":"good","class":"3rd/4th-gen Cephalosporin","note":"Reliable MSSA activity"},{"name":"Vancomycin","level":"excellent","class":"Glycopeptide","note":"Use when β-lactam allergy or empiric MRSA concern"},{"name":"Clindamycin","level":"good","class":"Lincosamide","note":"Useful for SSTI; check inducible resistance"},{"name":"TMP-SMX","level":"good","class":"Sulfonamide","note":"Oral option for SSTI"},{"name":"Doxycycline","level":"good","class":"Tetracycline","note":"Oral option"}]},{"key":"mrsa","name":"MRSA (Methicillin-resistant S. aureus)","aliases":["methicillin-resistant staphylococcus aureus","s. aureus mrsa","mrsa"],"drugs":[{"name":"Vancomycin","level":"excellent","class":"Glycopeptide","note":"First-line for serious MRSA infections"},{"name":"Daptomycin","level":"excellent","class":"Lipopeptide","note":"Preferred for bacteremia/endocarditis; avoid pneumonia"},{"name":"Linezolid / Tedizolid","level":"excellent","class":"Oxazolidinone","note":"Excellent oral bioavailability; covers VRE too"},{"name":"Ceftaroline","level":"excellent","class":"5th-gen Cephalosporin","note":"Only cephalosporin with reliable MRSA activity"},{"name":"Clindamycin","level":"moderate","class":"Lincosamide","note":"CA-MRSA only; check D-test"},{"name":"TMP-SMX","level":"moderate","class":"Sulfonamide","note":"CA-MRSA SSTI; not for bacteremia"},{"name":"Doxycycline / Minocycline","level":"moderate","class":"Tetracycline","note":"CA-MRSA SSTI option"},{"name":"Tigecycline","level":"good","class":"Glycylcycline","note":"Broad; limited bacteremia data"}]},{"key":"streptococcus","name":"Streptococcus spp. (incl. S. pyogenes, S. pneumoniae)","aliases":["strep","streptococci","group a strep","s. pyogenes","s. pneumoniae","pneumococcus","viridans strep"],"drugs":[{"name":"Penicillin G / V","level":"excellent","class":"Natural penicillin","note":"Drug of choice when susceptible"},{"name":"Amoxicillin / Ampicillin","level":"excellent","class":"Aminopenicillin","note":"Excellent for streptococci"},{"name":"Ceftriaxone / Cefotaxime","level":"excellent","class":"3rd-gen Cephalosporin","note":"Reliable for pneumococcus & groups A/B"},{"name":"Cefazolin / Cephalexin","level":"excellent","class":"1st-gen Cephalosporin","note":"Good for SSTI / pharyngitis alternatives"},{"name":"Vancomycin","level":"excellent","class":"Glycopeptide","note":"For penicillin-resistant or allergy"},{"name":"Clindamycin","level":"good","class":"Lincosamide","note":"Toxin suppression in severe GAS"},{"name":"Levofloxacin / Moxifloxacin","level":"good","class":"Fluoroquinolone","note":"Respiratory FQs; resistance concerns"},{"name":"Azithromycin","level":"moderate","class":"Macrolide","note":"High resistance in many regions"}]},{"key":"enterococcus faecalis","name":"Enterococcus faecalis","aliases":["e. faecalis","enterococcus faecalis","enterococci"],"drugs":[{"name":"Ampicillin / Amoxicillin","level":"excellent","class":"Aminopenicillin","note":"Drug of choice when susceptible"},{"name":"Amoxicillin/Clavulanate or Amp/Sulbactam","level":"excellent","class":"Aminopenicillin + BLI","note":"Good coverage"},{"name":"Piperacillin/Tazobactam","level":"excellent","class":"Extended-spectrum penicillin","note":"Reliable for E. faecalis"},{"name":"Vancomycin","level":"excellent","class":"Glycopeptide","note":"For ampicillin-resistant or allergy"},{"name":"Linezolid","level":"excellent","class":"Oxazolidinone","note":"Covers VRE as well"},{"name":"Daptomycin","level":"excellent","class":"Lipopeptide","note":"For serious infections / VRE"},{"name":"Imipenem","level":"moderate","class":"Carbapenem","note":"Better than meropenem for enterococci"}]},{"key":"enterococcus faecium","name":"Enterococcus faecium (incl. VRE)","aliases":["e. faecium","vre","vancomycin-resistant enterococcus"],"drugs":[{"name":"Linezolid","level":"excellent","class":"Oxazolidinone","note":"First-line for VRE"},{"name":"Daptomycin","level":"excellent","class":"Lipopeptide","note":"High-dose often used for bacteremia"},{"name":"Tigecycline","level":"good","class":"Glycylcycline","note":"Alternative; limited bacteremia data"},{"name":"Vancomycin","level":"limited","class":"Glycopeptide","note":"Only if vancomycin-susceptible"}]},{"key":"escherichia coli","name":"Escherichia coli","aliases":["e. coli","e coli","escherichia coli"],"drugs":[{"name":"Ceftriaxone / Cefotaxime","level":"excellent","class":"3rd-gen Cephalosporin","note":"Standard for susceptible strains"},{"name":"Cefepime","level":"excellent","class":"4th-gen Cephalosporin","note":"Broader coverage"},{"name":"Piperacillin/Tazobactam","level":"excellent","class":"Extended-spectrum penicillin","note":"Good empiric choice"},{"name":"Meropenem / Ertapenem","level":"excellent","class":"Carbapenem","note":"For ESBL producers"},{"name":"Ciprofloxacin / Levofloxacin","level":"good","class":"Fluoroquinolone","note":"Rising resistance; check local rates"},{"name":"TMP-SMX","level":"good","class":"Sulfonamide","note":"UTI option if susceptible"},{"name":"Gentamicin / Amikacin","level":"good","class":"Aminoglycoside","note":"Often used in combination"},{"name":"Amoxicillin/Clavulanate","level":"moderate","class":"Aminopenicillin + BLI","note":"Variable; resistance common"},{"name":"Fosfomycin (oral)","level":"good","class":"Phosphonic acid","note":"Uncomplicated cystitis"},{"name":"Nitrofurantoin","level":"good","class":"Nitrofuran","note":"Uncomplicated cystitis only"}]},{"key":"klebsiella","name":"Klebsiella pneumoniae / Klebsiella spp.","aliases":["klebsiella pneumoniae","k. pneumoniae","klebsiella"],"drugs":[{"name":"Ceftriaxone","level":"good","class":"3rd-gen Cephalosporin","note":"If not ESBL"},{"name":"Cefepime","level":"excellent","class":"4th-gen Cephalosporin","note":"Better for AmpC / some resistant"},{"name":"Piperacillin/Tazobactam","level":"good","class":"Extended-spectrum penicillin","note":"Variable vs ESBL"},{"name":"Meropenem / Ertapenem","level":"excellent","class":"Carbapenem","note":"Drug of choice for ESBL-K. pneumoniae"},{"name":"Ceftazidime/Avibactam","level":"excellent","class":"Cephalosporin + BLI","note":"For KPC and many CRE"},{"name":"Cefiderocol","level":"excellent","class":"Siderophore cephalosporin","note":"Last-line for many CRE"},{"name":"Amikacin","level":"good","class":"Aminoglycoside","note":"Often retained activity"},{"name":"Ciprofloxacin","level":"moderate","class":"Fluoroquinolone","note":"High resistance rates common"}]},{"key":"pseudomonas","name":"Pseudomonas aeruginosa","aliases":["p. aeruginosa","pseudomonas aeruginosa","pseudomonas","psa"],"drugs":[{"name":"Piperacillin/Tazobactam","level":"excellent","class":"Extended-spectrum penicillin","note":"Workhorse anti-pseudomonal β-lactam"},{"name":"Cefepime","level":"excellent","class":"4th-gen Cephalosporin","note":"Reliable anti-pseudomonal"},{"name":"Ceftazidime","level":"excellent","class":"3rd-gen Cephalosporin","note":"Classic anti-pseudomonal cephalosporin"},{"name":"Meropenem / Imipenem / Doripenem","level":"excellent","class":"Carbapenem","note":"Ertapenem has NO activity"},{"name":"Ciprofloxacin","level":"good","class":"Fluoroquinolone","note":"Only oral anti-pseudomonal FQ with good activity"},{"name":"Ceftolozane/Tazobactam","level":"excellent","class":"Cephalosporin + BLI","note":"Strong against many resistant PsA"},{"name":"Cefiderocol","level":"excellent","class":"Siderophore cephalosporin","note":"For difficult-to-treat resistant PsA"},{"name":"Tobramycin / Amikacin / Gentamicin","level":"good","class":"Aminoglycoside","note":"Usually combination therapy"},{"name":"Aztreonam","level":"good","class":"Monobactam","note":"Useful in severe penicillin allergy"},{"name":"Colistin / Polymyxin B","level":"good","class":"Polymyxin","note":"Last-line for XDR strains"}]},{"key":"enterobacterales","name":"Enterobacterales (general: E. coli, Klebsiella, Enterobacter, etc.)","aliases":["enterobacteriaceae","enterobacterales","enteric gnr","gnr"],"drugs":[{"name":"Ceftriaxone / Cefotaxime","level":"good","class":"3rd-gen Cephalosporin","note":"If not ESBL/AmpC"},{"name":"Cefepime","level":"excellent","class":"4th-gen Cephalosporin","note":"Better stability vs AmpC"},{"name":"Piperacillin/Tazobactam","level":"good","class":"Extended-spectrum penicillin","note":"Empiric option"},{"name":"Meropenem / Ertapenem","level":"excellent","class":"Carbapenem","note":"Reliable for ESBL"},{"name":"Ciprofloxacin / Levofloxacin","level":"moderate","class":"Fluoroquinolone","note":"Resistance rising"},{"name":"TMP-SMX","level":"moderate","class":"Sulfonamide","note":"If susceptible"},{"name":"Aminoglycosides","level":"good","class":"Aminoglycoside","note":"Synergy or directed therapy"}]},{"key":"esbl","name":"ESBL-producing Enterobacterales","aliases":["esbl","extended-spectrum beta-lactamase","esbl e. coli","esbl klebsiella"],"drugs":[{"name":"Meropenem / Ertapenem / Imipenem","level":"excellent","class":"Carbapenem","note":"Drug of choice for serious ESBL infections"},{"name":"Ceftazidime/Avibactam","level":"excellent","class":"Cephalosporin + BLI","note":"Carbapenem-sparing option for many ESBL"},{"name":"Ceftolozane/Tazobactam","level":"good","class":"Cephalosporin + BLI","note":"Active against many ESBL"},{"name":"Cefiderocol","level":"excellent","class":"Siderophore cephalosporin","note":"Broad Gram-negative including ESBL"},{"name":"Aminoglycosides (Amikacin)","level":"good","class":"Aminoglycoside","note":"If susceptible; often combination"},{"name":"TMP-SMX or FQ","level":"moderate","class":"Other","note":"Only if proven susceptible and mild infection"}]},{"key":"cre","name":"CRE (Carbapenem-resistant Enterobacterales)","aliases":["cre","carbapenem-resistant enterobacterales","kpc","ndm"],"drugs":[{"name":"Ceftazidime/Avibactam","level":"excellent","class":"Cephalosporin + BLI","note":"For KPC and OXA; not MBL alone"},{"name":"Meropenem/Vaborbactam","level":"excellent","class":"Carbapenem + BLI","note":"Primarily KPC"},{"name":"Imipenem/Relebactam","level":"excellent","class":"Carbapenem + BLI","note":"KPC and some others"},{"name":"Cefiderocol","level":"excellent","class":"Siderophore cephalosporin","note":"Active against many CRE mechanisms"},{"name":"Aztreonam + Avibactam (or + CAZ/AVI)","level":"good","class":"Combination","note":"For MBL producers"},{"name":"Colistin / Polymyxin B","level":"moderate","class":"Polymyxin","note":"Last-line; toxicity concerns"},{"name":"Tigecycline / Eravacycline","level":"good","class":"Tetracycline derivative","note":"Not for bacteremia/UTI primarily"}]},{"key":"acinetobacter","name":"Acinetobacter baumannii (incl. CRAB)","aliases":["a. baumannii","acinetobacter","crab"],"drugs":[{"name":"Sulbactam-containing regimens (Amp/Sulbactam high-dose)","level":"moderate","class":"β-lactam + BLI","note":"Sulbactam has intrinsic activity"},{"name":"Cefiderocol","level":"good","class":"Siderophore cephalosporin","note":"One of the better options for CRAB"},{"name":"Colistin / Polymyxin B","level":"moderate","class":"Polymyxin","note":"Often combination therapy"},{"name":"Tigecycline / Minocycline","level":"moderate","class":"Tetracycline","note":"Variable; high-dose sometimes used"},{"name":"Meropenem (high-dose extended infusion)","level":"limited","class":"Carbapenem","note":"Only if intermediate or combination"}]},{"key":"stenotrophomonas","name":"Stenotrophomonas maltophilia","aliases":["s. maltophilia","stenotrophomonas"],"drugs":[{"name":"TMP-SMX","level":"excellent","class":"Sulfonamide","note":"Drug of choice"},{"name":"Minocycline / Tigecycline","level":"good","class":"Tetracycline","note":"Good alternatives"},{"name":"Levofloxacin","level":"moderate","class":"Fluoroquinolone","note":"If susceptible"},{"name":"Cefiderocol","level":"good","class":"Siderophore cephalosporin","note":"Emerging option"}]},{"key":"anaerobes","name":"Anaerobes (incl. Bacteroides fragilis)","aliases":["bacteroides","b. fragilis","anaerobic","gut anaerobes","anaerobes"],"drugs":[{"name":"Metronidazole","level":"excellent","class":"Nitroimidazole","note":"Drug of choice for most anaerobes (esp. Bacteroides)"},{"name":"Piperacillin/Tazobactam","level":"excellent","class":"Extended-spectrum penicillin","note":"Excellent anaerobic coverage"},{"name":"Amoxicillin/Clavulanate or Amp/Sulbactam","level":"excellent","class":"Aminopenicillin + BLI","note":"Good for mixed infections"},{"name":"Meropenem / Imipenem / Ertapenem","level":"excellent","class":"Carbapenem","note":"Reliable anaerobic activity"},{"name":"Clindamycin","level":"moderate","class":"Lincosamide","note":"Resistance in B. fragilis increasing"},{"name":"Moxifloxacin","level":"moderate","class":"Fluoroquinolone","note":"Some anaerobic activity"},{"name":"Cefoxitin / Cefotetan","level":"good","class":"Cephamycin","note":"Moderate anaerobic coverage"}]},{"key":"clostridioides difficile","name":"Clostridioides difficile (C. difficile)","aliases":["c. difficile","c diff","clostridium difficile","cdi"],"drugs":[{"name":"Fidaxomicin","level":"excellent","class":"Macrocyclic","note":"Preferred for reduced recurrence"},{"name":"Vancomycin (oral)","level":"excellent","class":"Glycopeptide","note":"Standard first-line oral therapy"},{"name":"Metronidazole","level":"moderate","class":"Nitroimidazole","note":"Only for non-severe cases if others unavailable"}]},{"key":"atypicals","name":"Atypical pathogens (Mycoplasma, Chlamydia, Legionella)","aliases":["mycoplasma","chlamydia","legionella","atypical pneumonia","m. pneumoniae","c. pneumoniae","atypicals"],"drugs":[{"name":"Azithromycin / Clarithromycin","level":"excellent","class":"Macrolide","note":"Classic agents for atypicals"},{"name":"Levofloxacin / Moxifloxacin","level":"excellent","class":"Fluoroquinolone","note":"Respiratory FQs cover atypicals well"},{"name":"Doxycycline","level":"excellent","class":"Tetracycline","note":"Excellent alternative"},{"name":"Ciprofloxacin","level":"good","class":"Fluoroquinolone","note":"Less potent for pneumococcus but covers Legionella"}]},{"key":"haemophilus","name":"Haemophilus influenzae","aliases":["h. influenzae","haemophilus","h influenzae"],"drugs":[{"name":"Amoxicillin/Clavulanate","level":"excellent","class":"Aminopenicillin + BLI","note":"Covers β-lactamase producers"},{"name":"Ceftriaxone / Cefuroxime","level":"excellent","class":"Cephalosporin","note":"Reliable"},{"name":"Azithromycin","level":"good","class":"Macrolide","note":"Common respiratory choice"},{"name":"Levofloxacin / Moxifloxacin","level":"excellent","class":"Fluoroquinolone","note":"Excellent activity"},{"name":"TMP-SMX","level":"moderate","class":"Sulfonamide","note":"If susceptible"}]},{"key":"neisseria meningitidis","name":"Neisseria meningitidis","aliases":["n. meningitidis","meningococcus","meningococci"],"drugs":[{"name":"Ceftriaxone / Cefotaxime","level":"excellent","class":"3rd-gen Cephalosporin","note":"Empiric and definitive therapy"},{"name":"Penicillin G","level":"excellent","class":"Natural penicillin","note":"If proven susceptible"},{"name":"Meropenem","level":"excellent","class":"Carbapenem","note":"Alternative"}]},{"key":"listeria","name":"Listeria monocytogenes","aliases":["listeria","l. monocytogenes"],"drugs":[{"name":"Ampicillin (± Gentamicin)","level":"excellent","class":"Aminopenicillin","note":"Drug of choice"},{"name":"Penicillin G","level":"excellent","class":"Natural penicillin","note":"Alternative"},{"name":"TMP-SMX","level":"good","class":"Sulfonamide","note":"For penicillin allergy"},{"name":"Meropenem","level":"good","class":"Carbapenem","note":"Alternative"}]}], "SUGGESTIONS":["MRSA","MSSA","E. coli","Pseudomonas","Klebsiella","Streptococcus","Enterococcus faecalis","ESBL","Anaerobes","C. difficile","Atypicals","Acinetobacter","Stenotrophomonas"], "REFERENCES":[{"title":"Beyond Susceptible and Resistant: Clinical Implications of Antibiotic Spectrum","source":"MacDougall C. Clinical Infectious Diseases. Spectrum-scoring and stewardship literature."},{"title":"Antibacterial Agents — spectrum tables","source":"Standard pediatric and adult infectious diseases chapters covering β-lactams, fluoroquinolones, and glycopeptides."},{"title":"Antibiotics – Part 1: Spectrum","source":"TeachIM educational modules: practical coverage of penicillins, cephalosporins, carbapenems, anti-MRSA agents, and fluoroquinolones."},{"title":"Clinical pharmacology of antibiotics","source":"Open-access PMC reviews of β-lactam spectrum of activity and commonly treated infectious diseases."},{"title":"IDSA / ATS practice guidance","source":"Society documents on community-acquired pneumonia, skin and soft-tissue infections, and antimicrobial-resistant Gram-negative infections."},{"title":"WHO AWaRe classification and antibiotic book","source":"Access / Watch / Reserve grouping used to contextualize spectrum breadth and stewardship priority."},{"title":"Novel β-lactam / β-lactamase inhibitor combinations","source":"Reviews of ceftazidime-avibactam, ceftolozane-tazobactam, cefiderocol, meropenem-vaborbactam for CRE, DTR-Pseudomonas, and CRAB."},{"title":"Anaerobic and atypical coverage","source":"Standard references on metronidazole, β-lactam/BLI combinations, carbapenems, clindamycin, macrolides, respiratory fluoroquinolones, and doxycycline."},{"title":"Institutional antimicrobial stewardship guides","source":"UCSF IDMP and similar spectrum guides illustrating practical categorization of narrow vs broad agents."},{"title":"Supporting journals","source":"Antimicrobial Agents and Chemotherapy, Clinical Microbiology Reviews, and open educational antibiotic spectrum summaries used for cross-checking coverage statements."}]};
+
+        const SPECTRUM_DATA = SPECTRUM_BUNDLE.SPECTRUM_DATA;
+        const SPECTRUM_SUGGESTIONS = SPECTRUM_BUNDLE.SUGGESTIONS;
+        const SPECTRUM_REFERENCES = SPECTRUM_BUNDLE.REFERENCES;
+        const LEVEL_ORDER = { excellent: 0, good: 1, moderate: 2, limited: 3 };
+        const LEVEL_LABEL = {
+          excellent: "Excellent",
+          good: "Good",
+          moderate: "Moderate / Variable",
+          limited: "Limited"
+        };
+
+        function normalizePathogen(str) {
+          return String(str).toLowerCase().trim().replace(/\s+/g, " ");
+        }
+
+        function findPathogen(query) {
+          const q = normalizePathogen(query);
+          if (!q) return null;
+          const exact = SPECTRUM_DATA.find((item) =>
+            item.key === q || item.aliases.includes(q) || normalizePathogen(item.name) === q
+          );
+          if (exact) return exact;
+          return SPECTRUM_DATA.find((item) =>
+            item.key.includes(q) ||
+            normalizePathogen(item.name).includes(q) ||
+            item.aliases.some((a) => a.includes(q) || q.includes(a))
+          ) || null;
+        }
+
+        function sortDrugs(drugs) {
+          return [...drugs].sort((a, b) => LEVEL_ORDER[a.level] - LEVEL_ORDER[b.level]);
+        }
+
+        const chipsContainer = document.getElementById("chips");
+        if (chipsContainer) {
+            SPECTRUM_SUGGESTIONS.forEach((term) => {
+              const b = document.createElement("button");
+              b.type = "button";
+              b.className = "bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-700 text-xs font-medium px-3 py-1 rounded-full transition-all cursor-pointer";
+              b.textContent = term;
+              b.addEventListener("click", () => runSpectrumSearch(term));
+              chipsContainer.appendChild(b);
+            });
+        }
+
+        const refListEl = document.getElementById("refList");
+        if (refListEl) {
+            refListEl.innerHTML = SPECTRUM_REFERENCES.map((item) =>
+              `<li><strong>${item.title}.</strong> <span class="text-slate-500">${item.source}</span></li>`
+            ).join("");
+        }
+
+        const pathogenInput = document.getElementById("pathogen");
+        function runSpectrumSearch(value) {
+          if (!pathogenInput) return;
+          const next = (value ?? pathogenInput.value).trim();
+          pathogenInput.value = next;
+          const empty = document.getElementById("empty");
+          const none = document.getElementById("none");
+          const results = document.getElementById("results");
+          if (!empty || !none || !results) return;
+          
+          empty.hidden = true;
+          none.hidden = true;
+          results.hidden = true;
+          if (!next) { empty.hidden = false; return; }
+          const match = findPathogen(next);
+          if (!match) { none.hidden = false; return; }
+          
+          document.getElementById("pathogenBadge").textContent = match.name;
+          const drugs = sortDrugs(match.drugs);
+          document.getElementById("count").textContent = drugs.length + " รายการยา";
+          document.getElementById("grid").innerHTML = drugs.map((d) => `
+            <div class="bg-white border border-slate-200 rounded-xl p-4 flex flex-col gap-2 shadow-2xs">
+              <h3 class="font-bold text-slate-900 text-sm flex justify-between items-center">${d.name}</h3>
+              <div><span class="inline-block bg-slate-100 text-slate-600 text-[11px] font-semibold px-2 py-0.5 rounded">${d.class}</span></div>
+              <div><span class="inline-block text-xs font-bold px-2 py-0.5 rounded badge ${d.level}">${LEVEL_LABEL[d.level]}</span></div>
+              <p class="text-xs text-slate-600">${d.note}</p>
+            </div>
+          `).join("");
+          results.hidden = false;
+        }
+
+        const searchBtnEl = document.getElementById("searchBtn");
+        if (searchBtnEl) {
+            searchBtnEl.addEventListener("click", () => runSpectrumSearch());
+        }
+        if (pathogenInput) {
+            pathogenInput.addEventListener("keydown", (e) => { if (e.key === "Enter") runSpectrumSearch(); });
+        }
+
+        // Spectrum Search Modal Controls
+        const spectrumModal = document.getElementById("spectrumModal");
+        const openSpectrumModalBtn = document.getElementById("openSpectrumModalBtn");
+        const closeSpectrumModalBtn = document.getElementById("closeSpectrumModalBtn");
+        const refModal = document.getElementById("refModal");
+        const refBtnModal = document.getElementById("refBtnModal");
+        const closeRef = document.getElementById("closeRef");
+
+        if (openSpectrumModalBtn && spectrumModal) {
+            openSpectrumModalBtn.onclick = () => spectrumModal.classList.remove("hidden");
+        }
+        if (closeSpectrumModalBtn && spectrumModal) {
+            closeSpectrumModalBtn.onclick = () => spectrumModal.classList.add("hidden");
+        }
+        if (refBtnModal && refModal) {
+            refBtnModal.onclick = () => refModal.classList.remove("hidden");
+        }
+        if (closeRef && refModal) {
+            closeRef.onclick = () => refModal.classList.add("hidden");
+        }
+
+        // Compact search for the curated formulary list.
+        elAntibioticSearch?.addEventListener('input', initGridButtons);
+
+        /* Removed Netlify admin workspace. Medicine updates are reviewed and incorporated directly into this HTML file before deployment.
+        // Admin update queue: local drafts preserve the review request and selected document metadata.
+        const ADMIN_DRAFTS_KEY = 'renalDoseAdminDraftsV1';
+        const adminModal = document.getElementById('adminModal');
+        const openAdminModalBtn = document.getElementById('openAdminModalBtn');
+        const closeAdminModalBtn = document.getElementById('closeAdminModalBtn');
+        const adminFiles = document.getElementById('adminFiles');
+        const adminFileStatus = document.getElementById('adminFileStatus');
+        const adminDraftList = document.getElementById('adminDraftList');
+        const adminGate = document.getElementById('adminGate');
+        const adminGateMessage = document.getElementById('adminGateMessage');
+        const adminProtectedContent = document.getElementById('adminProtectedContent');
+        const adminLoginBtn = document.getElementById('adminLoginBtn');
+        const loadAdminDrafts = () => { try { return JSON.parse(localStorage.getItem(ADMIN_DRAFTS_KEY) || '[]'); } catch (_) { return []; } };
+        const saveAdminDrafts = (drafts) => localStorage.setItem(ADMIN_DRAFTS_KEY, JSON.stringify(drafts));
+        const renderAdminDrafts = () => {
+            const drafts = loadAdminDrafts();
+            adminDraftList.innerHTML = drafts.length ? drafts.map(d => `<div class="admin-update-row"><p class="font-bold text-slate-900">${d.title || 'ไม่ได้ระบุชื่อเอกสาร/ขอบเขต'}</p>${d.notes ? `<p class="text-sm text-slate-700">${d.notes}</p>` : ''}<p class="text-xs text-slate-500 mt-1">${d.files.join(', ')} · ${new Date(d.createdAt).toLocaleString('th-TH')}</p></div>`).join('') : '<p class="text-sm text-slate-500">ยังไม่มีฉบับร่าง</p>';
+        };
+        const updateAdminAccess = () => {
+            const identity = window.netlifyIdentity;
+            const user = identity?.currentUser?.();
+            const authorized = Boolean(user);
+            adminGate.classList.toggle('hidden', authorized);
+            adminProtectedContent.classList.toggle('hidden', !authorized);
+            if (authorized) {
+                adminGateMessage.textContent = `เข้าสู่ระบบแล้ว: ${user.email || 'Admin'}`;
+                renderAdminDrafts();
+            } else if (!identity) {
+                adminGateMessage.textContent = 'ยังไม่พบ Netlify Identity: ฟังก์ชันนี้จะใช้งานได้หลัง deploy และเปิด Identity บน Netlify';
+            } else {
+                adminGateMessage.textContent = 'เข้าสู่ระบบด้วยอีเมล admin และรหัสผ่าน Netlify Identity เพื่อดำเนินการต่อ';
+            }
+        };
+        openAdminModalBtn?.addEventListener('click', () => { updateAdminAccess(); adminModal.classList.remove('hidden'); adminModal.classList.add('flex'); });
+        closeAdminModalBtn?.addEventListener('click', () => { adminModal.classList.add('hidden'); adminModal.classList.remove('flex'); });
+        adminLoginBtn?.addEventListener('click', () => {
+            if (window.netlifyIdentity) window.netlifyIdentity.open('login');
+        });
+        window.addEventListener('load', () => {
+            if (!window.netlifyIdentity) return updateAdminAccess();
+            window.netlifyIdentity.on('login', () => { window.netlifyIdentity.close(); updateAdminAccess(); });
+            window.netlifyIdentity.on('logout', updateAdminAccess);
+            window.netlifyIdentity.init();
+            updateAdminAccess();
+        });
+        adminFiles?.addEventListener('change', () => { const files = [...adminFiles.files].map(file => file.name); adminFileStatus.textContent = files.length ? `เลือกเอกสาร ${files.length} ไฟล์: ${files.join(', ')}` : 'ยังไม่ได้เลือกเอกสาร'; });
+        document.getElementById('adminUpdateForm')?.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const draft = {title: document.getElementById('adminDocumentTitle').value.trim(), notes: document.getElementById('adminNotes').value.trim(), files: [...adminFiles.files].map(file => file.name), createdAt: new Date().toISOString()};
+            const drafts = loadAdminDrafts(); drafts.unshift(draft); saveAdminDrafts(drafts); renderAdminDrafts(); event.currentTarget.reset(); adminFileStatus.textContent = 'บันทึกฉบับร่างแล้ว; ชื่อเอกสารถูกเก็บไว้เพื่อการทบทวน';
+        });
+        document.getElementById('exportAdminDraftsBtn')?.addEventListener('click', () => {
+            const blob = new Blob([JSON.stringify(loadAdminDrafts(), null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob); const link = document.createElement('a'); link.href = url; link.download = 'antibiotic-dose-update-drafts.json'; link.click(); URL.revokeObjectURL(url);
+        });
+
+        */
+
+        // Bootstrap Runtime execution
+        initGridButtons();
+        runRenalCalculations();
+        assessArcRisk();
+        selectAntibiotic('meropenem');
+
+        // The deployed HTML is the clinical source of truth. This prevents an older Admin JSON
+        // publication from replacing the reviewed database bundled with this deployment.
+    </script>
+</body>
+</html>
